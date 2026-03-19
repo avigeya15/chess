@@ -5,29 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Основни SEO Тагове -->
-    <title>Авигея Василева | AFM (Arena FIDE Master) - Шахматни постижения</title>
-    <meta name="description" content="Официален уебсайт на Авигея Василева - Arena FIDE Master (AFM). Проследете нейните шахматни успехи, международни рейтинги и отличия от държавни турнири.">
-    <meta name="keywords" content="Авигея Василева, шах, AFM, Arena FIDE Master, шахматни турнири, България, FIDE рейтинг, шахматни постижения, шахматистка, avigeav">
+    <title>Авигея Василева | AFM (Arena FIDE Master) - Официален уебсайт</title>
+    <meta name="description" content="Официален сайт на Авигея Василева - Arena FIDE Master (AFM). Шахматни успехи, международни рейтинги, награди в компютърното моделиране и изкуството.">
+    <meta name="keywords" content="Авигея Василева, шахматистка, AFM, Arena FIDE Master, шахматни турнири България, FIDE рейтинг, шахматни постижения, Scratch програмиране, пътна безопасност София">
     <meta name="author" content="Авигея Василева">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
+    <!-- Schema.org Структурирани данни за Google (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Авигея Василева",
+      "givenName": "Авигея",
+      "familyName": "Василева",
+      "gender": "Female",
+      "jobTitle": "Шахматистка",
+      "honorificPrefix": "AFM",
+      "description": "Arena FIDE Master (AFM) с над 35 престижни отличия в българския шахмат, национални постижения в компютърното моделиране и награди в изобразителното изкуство.",
+      "url": "https://ratings.fide.com/profile/2961547",
+      "image": "avigea.jpeg",
+      "sameAs": [
+        "https://www.instagram.com/avigeav",
+        "https://worldchess.com/profile/888098",
+        "https://ratings.fide.com/profile/2961547"
+      ],
+      "knowsAbout": ["Шахмат", "Chess Strategy", "Scratch Programming", "Animation", "Fine Arts"],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Arena FIDE Master",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "FIDE - International Chess Federation"
+        }
+      }
+    }
+    </script>
+
+    <!-- Open Graph / Facebook / Instagram -->
+    <meta property="og:type" content="profile">
     <meta property="og:url" content="https://ratings.fide.com/profile/2961547">
-    <meta property="og:title" content="Авигея Василева | Arena FIDE Master">
-    <meta property="og:description" content="Разгледайте хрониката на успехите и статистиката на една от младите надежди на българския шахмат.">
+    <meta property="og:title" content="Авигея Василева | AFM Шахматистка">
+    <meta property="og:description" content="Проследете успехите на една от младите надежди на българския шахмат. Arena FIDE Master, програмист и творец.">
     <meta property="og:image" content="avigea.jpeg">
+    <meta property="profile:first_name" content="Авигея">
+    <meta property="profile:last_name" content="Василева">
+    <meta property="profile:username" content="avigeav">
+    <meta property="profile:gender" content="female">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Авигея Василева | Arena FIDE Master">
-    <meta property="twitter:description" content="Шахматни успехи и статистика на Авигея Василева.">
-    <meta property="twitter:image" content="avigea.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Авигея Василева | Arena FIDE Master">
+    <meta name="twitter:description" content="Шахматни успехи и статистика на Авигея Василева.">
+    <meta name="twitter:image" content="avigea.jpeg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -40,11 +75,14 @@
                             light: '#F3E5AB',
                             dark: '#997A00'
                         },
-                        pearl: '#FAFAFA'
+                        pearl: '#FAFAFA',
+                        code: '#64ffda',
+                        art: '#ff7043'
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace']
                     }
                 }
             }
@@ -62,27 +100,43 @@
         }
         .fade-in-up { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        .tab-btn { position: relative; transition: color 0.3s ease; }
+        .tab-btn { position: relative; transition: color 0.3s ease; color: #cbd5e1; }
         .tab-btn::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background-color: #D4AF37; transition: width 0.3s ease; }
         .tab-active { color: #D4AF37; }
         .tab-active::after { width: 100%; }
         .achievement-row { transition: all 0.3s ease; cursor: pointer; }
         .achievement-row:hover { background-color: rgba(255,255,255,0.02); }
-        .img-fallback { background: #111; display: flex; align-items: center; justify-content: center; color: #555; text-align: center; padding: 20px; }
+        .img-fallback { background: #111; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; padding: 20px; border: 1px solid #222; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .code-card {
+            background: linear-gradient(145deg, rgba(30,30,30,0.95), rgba(15,15,15,1));
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+        .art-card {
+            background: linear-gradient(145deg, rgba(40,25,20,0.95), rgba(15,10,10,1));
+            border: 1px solid rgba(255, 112, 67, 0.3);
+        }
+        .step-node { position: relative; }
+        .step-node::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: rgba(255, 112, 67, 0.2); margin-left: 11px; }
+        .step-node:last-child::before { display: none; }
     </style>
 </head>
 <body class="antialiased selection:bg-gold selection:text-midnight">
 
-    <nav class="fixed w-full z-50 bg-midnight/80 backdrop-blur-md border-b border-white/5 py-4 md:py-5 transition-all duration-300">
+    <nav class="fixed w-full z-50 bg-midnight/90 backdrop-blur-md border-b border-white/10 py-4 md:py-5 transition-all duration-300">
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
             <div class="text-lg md:text-xl font-serif tracking-widest text-pearl flex items-center gap-3">
                 <span class="text-gold text-xl md:text-2xl">♛</span>
                 AVIGEYA VASILEVA
             </div>
-            <div class="hidden md:flex space-x-10 text-xs uppercase tracking-[0.2em] font-medium text-gray-400">
+            <div class="hidden md:flex space-x-6 lg:space-x-8 text-[9px] lg:text-[10px] uppercase tracking-[0.2em] font-medium text-gray-100">
                 <a href="#home" class="hover:text-gold transition">Начало</a>
                 <a href="#stats" class="hover:text-gold transition">Статистика</a>
-                <a href="#achievements" class="hover:text-gold transition">Успехи</a>
+                <a href="#achievements" class="hover:text-gold transition">Шах</a>
+                <a href="#creative" class="hover:text-gold transition">Код</a>
+                <a href="#art-cause" class="hover:text-gold transition">Изкуство</a>
                 <a href="#certificate" class="hover:text-gold transition">AFM</a>
             </div>
         </div>
@@ -99,17 +153,17 @@
                     </p>
                     <h1 class="text-5xl md:text-8xl font-serif font-medium leading-[1.1] mb-6 md:mb-8 text-pearl">
                         Стратегия.<br>
-                        <span class="italic text-gray-400 font-light">Интелект.</span><br>
+                        <span class="italic text-gray-100 font-light">Интелект.</span><br>
                         Победа.
                     </h1>
-                    <p class="text-gray-400 font-light text-base md:text-xl leading-relaxed mb-8 md:mb-12 max-w-lg">
+                    <p class="text-gray-100 font-light text-base md:text-xl leading-relaxed mb-8 md:mb-12 max-w-lg">
                         Авигея Василева е сред най-изявените млади таланти в българския шахмат. С над 35 престижни отличия, тя превръща всяка партия в изкуство.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
                         <a href="#achievements" class="inline-block px-8 md:px-10 py-4 border border-gold text-gold hover:bg-gold hover:text-midnight transition duration-300 tracking-[0.1em] uppercase text-xs md:text-sm text-center">
                             История на успехите
                         </a>
-                        <a href="https://www.instagram.com/avigeav" target="_blank" class="flex items-center justify-center gap-3 px-8 md:px-10 py-4 border border-white/10 text-pearl hover:border-gold transition duration-300 tracking-[0.1em] uppercase text-xs md:text-sm group">
+                        <a href="https://www.instagram.com/avigeav" target="_blank" class="flex items-center justify-center gap-3 px-8 md:px-10 py-4 border border-white/20 text-pearl hover:border-gold transition duration-300 tracking-[0.1em] uppercase text-xs md:text-sm group">
                             <svg class="w-4 h-4 md:w-5 md:h-5 group-hover:text-gold transition" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                             Instagram
                         </a>
@@ -117,61 +171,43 @@
                 </div>
                 <div class="order-1 lg:order-2 flex justify-center lg:justify-end fade-in-up delay-200 relative px-4 md:px-0">
                     <div class="absolute inset-0 border border-white/10 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8 pointer-events-none"></div>
-                    <div class="relative w-64 h-[400px] md:w-96 md:h-[600px] overflow-hidden">
-                        <div class="absolute inset-0 bg-midnight mix-blend-overlay z-10 opacity-20 hover:opacity-0 transition duration-700"></div>
+                    <div class="relative w-64 h-[400px] md:w-96 md:h-[600px] overflow-hidden rounded-sm ring-1 ring-white/10">
+                        <div class="absolute inset-0 bg-midnight mix-blend-overlay z-10 opacity-10 hover:opacity-0 transition duration-700"></div>
                         <img src="avigea.jpeg" 
-                             alt="Авигея Василева" 
-                             class="w-full h-full object-cover object-center grayscale-[10%] hover:grayscale-0 transition duration-700 scale-105 hover:scale-100"
+                             alt="Авигея Василева с купи и медали" 
+                             class="w-full h-full object-cover object-center transition duration-700 scale-105 hover:scale-100"
                              onerror="this.parentElement.innerHTML='<div class=\'img-fallback w-full h-full text-white\'><div class=\'space-y-4\'><span class=\'text-gold text-4xl\'>♛</span><p class=\'text-[10px] uppercase tracking-[0.2em] opacity-40\'>Портретът не е наличен</p></div></div>'">
-                    </div>
-                    <!-- FIDE & World Chess Badge -->
-                    <div class="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-12 bg-midnight/90 backdrop-blur-md border border-white/10 p-4 md:p-6 shadow-2xl hover:border-gold/50 transition duration-300 group">
-                        <div class="flex flex-col gap-3 md:gap-4">
-                            <div>
-                                <a href="https://ratings.fide.com/profile/2961547" target="_blank" class="block">
-                                    <div class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest mb-1">FIDE ID</div>
-                                    <div class="text-xl md:text-2xl font-serif text-gold group-hover:text-pearl transition">2961547</div>
-                                </a>
-                            </div>
-                            <div class="h-px bg-white/10 w-full"></div>
-                            <div>
-                                <a href="https://worldchess.com/profile/888098" target="_blank" class="block">
-                                    <div class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest mb-1">World Chess ID</div>
-                                    <div class="text-lg md:text-xl font-serif text-pearl hover:text-gold transition">888098</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mt-3 w-8 h-px bg-gold/50 group-hover:w-full transition-all duration-300"></div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Секция Статистика (АВТОМАТИЧНА) -->
-    <section id="stats" class="py-16 md:py-24 bg-midnight border-t border-white/5 relative z-20">
+    <!-- Статистика -->
+    <section id="stats" class="py-16 md:py-24 bg-midnight border-t border-white/10 relative z-20">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center md:text-left divide-x-0 md:divide-x md:divide-white/10">
                 <div class="fade-in-up">
                     <div id="count-gold" class="text-4xl md:text-7xl font-serif text-gold mb-2 md:mb-4 font-light">0</div>
-                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500">Златни медала</div>
+                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-100">Златни медала</div>
                 </div>
                 <div class="md:px-8 fade-in-up delay-100">
                     <div id="count-silver" class="text-4xl md:text-7xl font-serif text-pearl mb-2 md:mb-4 font-light">0</div>
-                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500">Сребърни медала</div>
+                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-100">Сребърни медала</div>
                 </div>
                 <div class="md:px-8 fade-in-up delay-200">
                     <div id="count-bronze" class="text-4xl md:text-7xl font-serif text-amber-700 mb-2 md:mb-4 font-light">0</div>
-                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500">Бронзови медала</div>
+                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-100">Бронзови медала</div>
                 </div>
                 <div class="md:px-8 fade-in-up delay-300">
-                    <div id="count-total" class="text-4xl md:text-7xl font-serif text-gray-400 mb-2 md:mb-4 font-light">0</div>
-                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500">Общо отличия</div>
+                    <div id="count-total" class="text-4xl md:text-7xl font-serif text-gray-300 mb-2 md:mb-4 font-light">0</div>
+                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-100">Общо отличия</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Шахматни Успехи -->
     <section id="achievements" class="py-20 md:py-32 bg-pearl text-midnight selection:bg-midnight selection:text-gold">
         <div class="container mx-auto px-6 lg:px-12 max-w-6xl">
             <div class="mb-12 md:mb-20">
@@ -182,193 +218,217 @@
                             Авигея Василева
                         </p>
                         <h2 class="text-4xl md:text-5xl font-serif mb-4 md:mb-6">Хроника на<br><span class="italic text-gold">Постиженията</span></h2>
-                        <p class="text-gray-500 max-w-xl font-light text-sm md:text-base">Детайлен преглед на завоюваните върхове в кариерата на Авигея Василева.</p>
+                        <p class="text-gray-700 max-w-xl font-light text-sm md:text-base leading-relaxed">Детайлен преглед на завоюваните върхове в кариерата на Авигея Василева.</p>
                     </div>
                     
-                    <!-- FIDE Ratings Block -->
                     <div class="relative group w-full md:w-auto">
-                        <div class="bg-midnight border border-white/10 shadow-2xl flex justify-around md:justify-start gap-4 md:gap-8 text-center p-5 md:p-8 rounded-sm">
+                        <div class="bg-midnight border border-white/20 shadow-2xl flex justify-around md:justify-start gap-4 md:gap-8 text-center p-5 md:p-8 rounded-sm">
                             <div>
                                 <div id="rate-std" class="text-2xl md:text-3xl font-serif text-pearl">1558</div>
                                 <div class="text-[9px] text-gold uppercase tracking-widest mt-2">Standard</div>
                             </div>
-                            <div class="w-px bg-white/10"></div>
+                            <div class="w-px bg-white/20"></div>
                             <div>
                                 <div id="rate-rap" class="text-2xl md:text-3xl font-serif text-pearl">1494</div>
                                 <div class="text-[9px] text-gold uppercase tracking-widest mt-2">Rapid</div>
                             </div>
-                            <div class="w-px bg-white/10"></div>
+                            <div class="w-px bg-white/20"></div>
                             <div>
                                 <div id="rate-blz" class="text-2xl md:text-3xl font-serif text-pearl">1524</div>
                                 <div class="text-[9px] text-gold uppercase tracking-widest mt-2">Blitz</div>
                             </div>
                         </div>
-                        <button onclick="syncRatings()" id="sync-btn" class="absolute -top-3 -right-3 bg-gold hover:bg-gold-dark text-midnight w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-transform hover:rotate-180" title="AI Синхронизация с FIDE">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                        <button onclick="syncRatings()" id="sync-btn" class="absolute -top-3 -right-3 bg-gold hover:bg-gold-dark text-midnight w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-transform hover:rotate-180" title="Синхронизация с FIDE">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
                         </button>
                     </div>
                 </div>
             </div>
             
-            <div class="flex space-x-6 md:space-x-12 border-b border-gray-200 mb-8 md:mb-12 overflow-x-auto no-scrollbar">
-                <button onclick="switchTab('dip')" id="tab-dip" class="tab-btn tab-active pb-4 text-[10px] md:text-sm uppercase tracking-[0.15em] font-semibold text-gray-400 whitespace-nowrap">
+            <div class="flex space-x-6 md:space-x-12 border-b border-gray-200 mb-8 md:mb-12 overflow-x-auto no-scrollbar font-medium">
+                <button onclick="switchTab('dip')" id="tab-dip" class="tab-btn tab-active pb-4 text-[10px] md:text-sm uppercase tracking-[0.15em] whitespace-nowrap">
                     Държавни първенства
                 </button>
-                <button onclick="switchTab('others')" id="tab-others" class="tab-btn pb-4 text-[10px] md:text-sm uppercase tracking-[0.15em] font-semibold text-gray-400 whitespace-nowrap">
+                <button onclick="switchTab('others')" id="tab-others" class="tab-btn pb-4 text-[10px] md:text-sm uppercase tracking-[0.15em] whitespace-nowrap">
                     Други турнири
                 </button>
             </div>
 
             <div id="list-dip" class="fade-in-up">
-                <!-- Header visible only on desktop -->
-                <div class="hidden md:flex text-xs uppercase tracking-widest text-gray-400 border-b border-gray-200 pb-4 mb-4">
-                    <div class="w-1/4">Дата / Година</div>
-                    <div class="w-1/2">Турнир</div>
-                    <div class="w-1/4 text-right">Резултат</div>
-                </div>
                 <div id="dip-container"></div>
             </div>
-
             <div id="list-others" class="hidden fade-in-up">
-                <!-- Header visible only on desktop -->
-                <div class="hidden md:flex text-xs uppercase tracking-widest text-gray-400 border-b border-gray-200 pb-4 mb-4">
-                    <div class="w-1/4">Дата / Година</div>
-                    <div class="w-1/2">Турнир</div>
-                    <div class="w-1/4 text-right">Резултат</div>
-                </div>
                 <div id="others-container"></div>
             </div>
-
-            <script>
-                // Данни за турнирите
-                const dipData = [
-                    { date: "02-04 Март 2026", title: "ДИП по ускорен шахмат", details: "I категория момичета до 12г. • Пловдив", place: "II място" },
-                    { date: "02-04 Март 2026", title: "ДИП по блиц шахмат", details: "I категория момичета до 12г. • Пловдив", place: "II място" },
-                    { date: "21-26 Окт 2025", title: "ДИП по ускорен шахмат", details: "девойки до 20г. • Перник", place: "II място" },
-                    { date: "21-26 Окт 2025", title: "ДИП по блиц шахмат", details: "девойки до 20г. • Перник", place: "II място" },
-                    { date: "01-07 Юни 2025", title: "ДИП по класически шахмат", details: "I категория момичета до 10г. • Приморско", place: "III място" },
-                    { date: "21-23 Март 2025", title: "ДИП по блиц шахмат", details: "I категория момичета до 10г. • Асеновград", place: "I място" },
-                    { date: "22 Ноем 2024", title: "ДИП по Блиц Шахмат", details: "I категория момичета до 14г. • София", place: "II място" },
-                    { date: "01-06 Окт 2024", title: "Държавен отборен шампионат (блиц)", details: "I категория момичета до 10г. • Боровец", place: "I място" },
-                    { date: "01-06 Окт 2024", title: "Държавен отборен шампионат (ускорен)", details: "I категория момичета до 10г. • Боровец", place: "II място" },
-                    { date: "01-06 Окт 2024", title: "Държавен отборен шампионат (класически)", details: "I категория момичета до 10г. • Боровец", place: "III място" }
-                ];
-
-                const othersData = [
-                    { date: "08.02.2026", title: "VII МШФ „Херея Дружба“", details: "I категория момичета до 12г. • София", place: "I място" },
-                    { date: "29.01. - 01.02.2026", title: "V Мемориал Юлиян Радулски", details: "I категория момичета до 12г. • Пловдив", place: "I място" },
-                    { date: "03-04.01.2026", title: "Купа „София“", details: "I категория момичета до 12г. • София", place: "II място" },
-                    { date: "10.08.2025", title: "Купа „Милениум“", details: "I категория до 10г. • София", place: "III място" },
-                    { date: "19-20.07.2025", title: "Турнир „Шахматно лято“", details: "I категория момичета до 10г. • София", place: "I място" },
-                    { date: "18.05.2025", title: "I Фестивал „Питагор“", details: "I категория момичета до 10г. • София", place: "I място" },
-                    { date: "03.05.2025", title: "Купа „Млади таланти“", details: "I категория момичета до 10г. • София", place: "I място" },
-                    { date: "27.04.2025", title: "Семеен турнир „Цар и пешка“", details: "родител и дете • София", place: "II място" },
-                    { date: "06.04.2025", title: "Купа „Милениум“", details: "I категория до 12г. • София", place: "I място" },
-                    { date: "16.03.2025", title: "Купа Струма", details: "I категория до 14г. • Перник", place: "III място" },
-                    { date: "16.02.2025", title: "VI Фестивал „Херея Дружба“", details: "I категория момичета до 10г. • София", place: "II място" },
-                    { date: "09.02.2025", title: "Купа „Милениум“", details: "I категория до 10г. • София", place: "I място" },
-                    { date: "14.12.2024", title: "„Коледни звезди“", details: "I категория момичета до 10г. • София", place: "I място" },
-                    { date: "30.11.2024", title: "XI Купа „Ан Пасан“", details: "I категория момичета до 10г. • София", place: "I място" },
-                    { date: "24.11.2024", title: "Купа „Милениум“", details: "I категория момичета до 14г. • София", place: "I място" },
-                    { date: "17.11.2024", title: "Купа „Възраждане“ - II", details: "I категория момичета до 10г. • София", place: "I място" },
-                    { date: "27.10.2024", title: "Купа „Милениум“", details: "I категория до 10г. • София", place: "II място" },
-                    { date: "20.10.2024", title: "X Купа „Ан Пасан“", details: "I категория момичета до 10г. • София", place: "II място" },
-                    { date: "15.09.2024", title: "Турнир „Шахматна мисъл“", details: "I категория момичета до 10г. • София", place: "I място" },
-                    { date: "11.08.2024", title: "Купа „Милениум“", details: "I категория до 10г. • София", place: "II място" },
-                    { date: "06.07.2024", title: "Купа „Милениум“", details: "I категория момичета до 14г. • София", place: "II място" },
-                    { date: "26.05.2024", title: "Седми детски шахматен турнир ЕЛИТ", details: "I категория момичета до 10г. • София", place: "I място" },
-                    { date: "30.03.2024", title: "Купа „Милениум“", details: "I категория момичета до 14г. • София", place: "I място" },
-                    { date: "17.03.2024", title: "Турнир „Възраждане“", details: "I категория момичета до 10г. • София", place: "III място" },
-                    { date: "24.02.2024", title: "Купа „Милениум“", details: "I категория момичета до 14г. • София", place: "III място" }
-                ];
-
-                // Функция за пресмятане на статистика
-                function updateStats() {
-                    const all = [...dipData, ...othersData];
-                    let gold = 0, silver = 0, bronze = 0;
-                    
-                    all.forEach(item => {
-                        if (item.place.trim() === 'I място') gold++;
-                        else if (item.place.trim() === 'II място') silver++;
-                        else if (item.place.trim() === 'III място') bronze++;
-                    });
-
-                    document.getElementById('count-gold').innerText = gold;
-                    document.getElementById('count-silver').innerText = silver;
-                    document.getElementById('count-bronze').innerText = bronze;
-                    document.getElementById('count-total').innerText = all.length;
-                }
-
-                function renderList(data, containerId) {
-                    const container = document.getElementById(containerId);
-                    let htmlContent = '';
-                    data.forEach(item => {
-                        const isGold = item.place.trim() === 'I място';
-                        const isSilver = item.place.trim() === 'II място';
-                        const isBronze = item.place.trim() === 'III място';
-                        
-                        const titleClass = isGold ? "text-gold-dark" : "text-midnight";
-                        const fontClass = isGold ? "font-semibold text-gold-dark" : "font-medium text-gray-700";
-                        
-                        let iconColor = isGold ? 'text-[#D4AF37]' : isSilver ? 'text-[#C0C0C0]' : isBronze ? 'text-[#CD7F32]' : 'text-gray-400';
-                        const svgIcon = `<svg class="w-4 h-4 md:w-5 md:h-5 mr-2 ${iconColor}" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0-11a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" /><path d="M8 13.5l-2.5 9.5 6.5-3.5 6.5 3.5-2.5-9.5a8.9 8.9 0 0 1-8 0z" /></svg>`;
-                        
-                        htmlContent += `
-                        <div class="flex flex-col md:flex-row md:items-center py-4 md:py-5 border-b border-gray-100 achievement-row group px-2" onclick="analyzeSingleTournament('${item.title}', '${item.place}', '${item.details}', '${item.date}')">
-                            <!-- Date Column: Stacked on mobile, column on desktop -->
-                            <div class="w-full md:w-1/4 mb-1 md:mb-0 text-[10px] md:text-sm text-gray-400 md:text-gray-500 font-light uppercase md:normal-case">${item.date}</div>
-                            
-                            <!-- Title Column -->
-                            <div class="w-full md:w-1/2">
-                                <h3 class="font-serif text-lg md:text-xl ${titleClass}">${item.title}</h3>
-                                <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-widest">${item.details}</p>
-                            </div>
-                            
-                            <!-- Result Column -->
-                            <div class="w-full md:w-1/4 text-left md:text-right flex items-center md:justify-end mt-2 md:mt-0 ${fontClass} text-sm md:text-base">
-                                ${svgIcon} ${item.place}
-                            </div>
-                        </div>`;
-                    });
-                    container.innerHTML = htmlContent;
-                    updateStats();
-                }
-
-                renderList(dipData, 'dip-container');
-                renderList(othersData, 'others-container');
-            </script>
         </div>
     </section>
 
-    <!-- Секция Сертификат -->
-    <section id="certificate" class="py-20 md:py-32 bg-midnight relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-3xl bg-gold/5 blur-[100px] md:blur-[150px] pointer-events-none rounded-full"></div>
-        <div class="container mx-auto px-6 lg:px-12 relative z-10 text-center">
-            <span class="text-gold text-3xl md:text-4xl mb-6 inline-block">♛</span>
-            <h2 class="text-3xl md:text-5xl font-serif mb-6 text-pearl">Официално Признание</h2>
-            <div class="relative group w-full max-w-2xl mx-auto mb-12 md:mb-16">
-                <div class="absolute -inset-2 md:-inset-8 bg-white/5 border border-white/10 rounded-sm"></div>
-                <div class="relative bg-[#050505] p-2 border border-white/20 shadow-2xl z-10">
-                    <img src="title_certificate_888098_AFM.png" alt="FIDE Certificate AFM" class="w-full h-auto grayscale-[20%] opacity-90 mx-auto" onerror="this.parentElement.innerHTML='<div class=\'aspect-[1.4] flex flex-col items-center justify-center p-6 md:p-12\'><h3 class=\'font-serif text-xl md:text-2xl text-pearl\'>Arena FIDE Master</h3><p class=\'text-[10px] uppercase tracking-widest text-gray-500 mt-2\'>Certificate #888098</p></div>'">
+    <!-- Код и Програмиране -->
+    <section id="creative" class="py-20 md:py-32 bg-midnight relative z-10 border-t border-white/10 overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-code/10 blur-[120px] pointer-events-none"></div>
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="max-w-5xl mx-auto">
+                <p class="text-code tracking-[0.3em] uppercase text-[10px] md:text-xs font-semibold mb-4 flex items-center gap-4">
+                    <span class="w-8 h-px bg-code"></span>
+                    Отвъд шахмата
+                </p>
+                <h2 class="text-4xl md:text-5xl font-serif mb-12 text-pearl">Творческият <span class="italic text-code font-light">Код</span></h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
+                    <div class="lg:col-span-3 space-y-10">
+                        <div class="code-card p-6 md:p-8 rounded-lg relative overflow-hidden">
+                            <h3 class="text-2xl font-serif text-pearl mb-6 flex items-center gap-3">👩‍💻 Scratch & Анимация</h3>
+                            <p class="text-gray-100 font-light leading-relaxed mb-10 text-sm md:text-base">
+                                Програмирането за мен е начин да вдъхна живот на идеите си. Пътят до националния успех беше изпълнен с много креативност.
+                            </p>
+                            
+                            <div class="space-y-8">
+                                <div class="step-node flex gap-6 pb-2">
+                                    <div class="w-6 h-6 shrink-0 bg-code rounded-full flex items-center justify-center text-midnight text-[10px] font-bold z-10 shadow-[0_0_10px_rgba(100,255,218,0.5)]">1</div>
+                                    <div>
+                                        <h4 class="text-pearl font-medium text-sm">Общински & Областен кръг • София</h4>
+                                        <p class="text-gray-200 text-xs mt-1 leading-relaxed">Класирана в топ 6 сред над 150 деца от София.</p>
+                                    </div>
+                                </div>
+                                <div class="step-node flex gap-6 pb-2">
+                                    <div class="w-6 h-6 shrink-0 bg-code rounded-full flex items-center justify-center text-midnight text-[10px] font-bold z-10 shadow-[0_0_10px_rgba(100,255,218,0.5)]">2</div>
+                                    <div>
+                                        <h4 class="text-pearl font-medium text-sm">Национален финал • Шумен</h4>
+                                        <p class="text-gray-200 text-xs mt-1 leading-relaxed">14-15.03.2026 в СУ „Сава Доброплодни“ сред 54 финалисти.</p>
+                                    </div>
+                                </div>
+                                <div class="step-node flex gap-6">
+                                    <div class="w-6 h-6 shrink-0 bg-code rounded-full flex items-center justify-center text-midnight text-[10px] font-bold z-10 shadow-[0_0_10px_rgba(100,255,218,0.5)]">3</div>
+                                    <div>
+                                        <h4 class="text-pearl font-medium text-sm">Финално класиране</h4>
+                                        <p class="text-gray-200 text-xs mt-1 italic leading-relaxed">Грамота за Оригинално представена анимация на национален кръг.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2">
+                        <div class="relative group h-full">
+                            <div class="absolute -inset-1 bg-code/20 blur opacity-40 group-hover:opacity-60 transition duration-500"></div>
+                            <div class="relative bg-midnight border border-white/10 p-2 shadow-2xl rounded-sm overflow-hidden h-full flex flex-col">
+                                <img src="gramota.webp" alt="Грамота за оригинална анимация" class="w-full h-auto object-contain flex-1 bg-white">
+                                <div class="p-3 bg-midnight/90 text-center border-t border-white/10">
+                                    <h5 class="text-pearl font-serif text-sm">Грамота Scratch</h5>
+                                    <p class="text-[8px] text-code uppercase tracking-widest mt-1">Шумен 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="flex justify-center gap-6 md:gap-8 text-[10px] md:text-sm uppercase tracking-widest text-gray-500">
-                <div><span class="block text-gray-600 mb-1 text-[9px]">FIDE ID</span><span class="text-pearl">2961547</span></div>
+        </div>
+    </section>
+
+    <!-- Изкуство с Кауза -->
+    <section id="art-cause" class="py-20 md:py-32 bg-midnight relative z-10 border-t border-white/10 overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-art/10 blur-[120px] pointer-events-none"></div>
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="max-w-6xl mx-auto">
+                <p class="text-art tracking-[0.3em] uppercase text-[10px] md:text-xs font-semibold mb-4 flex items-center gap-4">
+                    <span class="w-8 h-px bg-art"></span>
+                    Обществена ангажираност
+                </p>
+                <h2 class="text-4xl md:text-5xl font-serif mb-12 text-pearl text-center lg:text-left">Изкуство с <span class="italic text-art font-light">Кауза</span></h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                    <div class="lg:col-span-6">
+                        <div class="art-card p-6 md:p-10 rounded-lg h-full border border-art/20">
+                            <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
+                                <h3 class="text-2xl font-serif text-pearl leading-tight">„Не преминавайте<br>през децата ни“</h3>
+                                <span class="bg-art/20 text-art text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-widest border border-art/30 whitespace-nowrap">III място</span>
+                            </div>
+                            
+                            <p class="text-gray-100 font-light leading-relaxed mb-8 text-sm md:text-base">
+                                Кампания на Столична община. В конкуренция с над <strong class="text-art">600 рисунки</strong>, творбата на Авигея беше отличена от професионално жури.
+                            </p>
+                            
+                            <div class="space-y-6 border-l border-art/20 pl-6 relative">
+                                <div class="relative">
+                                    <div class="absolute -left-[31px] top-1 w-2.5 h-2.5 rounded-full bg-art border-2 border-midnight"></div>
+                                    <h4 class="text-pearl font-medium text-sm">Флашмоб & „Пим Пам“</h4>
+                                    <p class="text-gray-300 text-xs mt-1 leading-relaxed">18 ноември 2023 г., Софийски университет. Музика и изкуство в подкрепа на пътната безопасност.</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[31px] top-1 w-2.5 h-2.5 rounded-full bg-art border-2 border-midnight"></div>
+                                    <h4 class="text-pearl font-medium text-sm">Награда от НХА</h4>
+                                    <p class="text-gray-300 text-xs mt-1 leading-relaxed">Церемония в галерията на Националната художествена академия.</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute -left-[31px] top-1 w-2.5 h-2.5 rounded-full bg-art border-2 border-midnight shadow-[0_0_10px_#ff7043]"></div>
+                                    <h4 class="text-pearl font-medium text-sm">Линия № 280</h4>
+                                    <p class="text-gray-300 text-xs mt-1 leading-relaxed">Рисунката е избрана за брандиране на автобус от софийския градски транспорт.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex flex-col h-full">
+                            <div class="relative group flex-1">
+                                <div class="absolute -inset-1 bg-art/20 blur opacity-40 group-hover:opacity-60 transition duration-500"></div>
+                                <div class="relative h-full bg-midnight border border-white/10 p-2 shadow-2xl rounded-sm overflow-hidden flex flex-col">
+                                    <img src="gramota_1.webp" alt="Грамота за III място рисунка" class="w-full h-auto object-contain flex-1 bg-white">
+                                    <div class="p-3 bg-midnight/90 text-center border-t border-white/10">
+                                        <h5 class="text-pearl font-serif text-sm">Грамота Рисунка</h5>
+                                        <p class="text-[8px] text-art uppercase tracking-widest mt-1">III място в София</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col h-full">
+                            <div class="relative group flex-1">
+                                <div class="absolute -inset-1 bg-art/20 blur opacity-40 group-hover:opacity-60 transition duration-500"></div>
+                                <div class="relative h-full bg-midnight border border-white/10 p-2 shadow-2xl rounded-sm overflow-hidden flex flex-col">
+                                    <img src="bus.jpg" alt="Брандиран автобус с рисунка на Авигея" class="w-full h-auto object-cover flex-1">
+                                    <div class="p-3 bg-midnight/90 text-center border-t border-white/10">
+                                        <h5 class="text-pearl font-serif text-sm">Автобус № 2302</h5>
+                                        <p class="text-[8px] text-art uppercase tracking-widest mt-1">Линия 280 • София</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AFM Сертификат -->
+    <section id="certificate" class="py-20 md:py-32 bg-midnight relative overflow-hidden border-t border-white/10">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-3xl bg-gold/5 blur-[100px] pointer-events-none rounded-full"></div>
+        <div class="container mx-auto px-6 lg:px-12 relative z-10 text-center">
+            <span class="text-gold text-3xl md:text-4xl mb-6 inline-block">♛</span>
+            <h2 class="text-3xl md:text-5xl font-serif mb-6 text-pearl leading-tight">Официално Признание</h2>
+            <div class="relative group w-full max-w-2xl mx-auto mb-16">
+                <div class="absolute -inset-2 md:-inset-8 bg-white/5 border border-white/10 rounded-sm"></div>
+                <div class="relative bg-[#050505] p-2 border border-white/20 shadow-2xl z-10">
+                    <img src="title_certificate_888098_AFM.png" alt="FIDE Certificate AFM" class="w-full h-auto grayscale-[10%] opacity-90 mx-auto" onerror="this.parentElement.innerHTML='<div class=\'aspect-[1.4] flex flex-col items-center justify-center p-6 md:p-12 border-white/10 bg-white/5\'><h3 class=\'font-serif text-xl text-pearl\'>Arena FIDE Master</h3><p class=\'text-[10px] uppercase tracking-widest text-gray-300 mt-2\'>Certificate #888098</p></div>'">
+                </div>
+            </div>
+            <div class="flex justify-center gap-6 md:gap-8 text-[10px] md:text-sm uppercase tracking-widest text-gray-300 font-medium">
+                <div><span class="block text-gray-400 mb-1">FIDE ID</span><span class="text-pearl">2961547</span></div>
                 <div class="w-px h-8 bg-white/10"></div>
-                <div><span class="block text-gray-600 mb-1 text-[9px]">CERT NO</span><span class="text-pearl">888098</span></div>
+                <div><span class="block text-gray-400 mb-1">CERT NO</span><span class="text-pearl">888098</span></div>
             </div>
         </div>
     </section>
 
     <!-- Футър -->
-    <footer class="bg-[#050505] py-8 md:py-12 border-t border-white/5">
-        <div class="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-gold font-serif text-xl tracking-widest">A.V.</div>
-            <p class="text-gray-600 text-[10px] uppercase tracking-widest text-center">© 2026 Авигея Василева. Всички права запазени.</p>
-            <div class="flex gap-4 md:gap-6">
-                <a href="https://ratings.fide.com/profile/2961547" target="_blank" class="text-[10px] text-gray-400 hover:text-gold uppercase tracking-[0.1em] transition">FIDE ↗</a>
-                <a href="https://worldchess.com/profile/888098" target="_blank" class="text-[10px] text-gray-400 hover:text-gold uppercase tracking-[0.1em] transition">World Chess ↗</a>
-                <a href="https://www.instagram.com/avigeav" target="_blank" class="text-[10px] text-gray-400 hover:text-gold uppercase tracking-[0.1em] transition">Instagram ↗</a>
+    <footer class="bg-[#050505] py-12 border-t border-white/10">
+        <div class="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div>
+                <div class="text-gold font-serif text-2xl tracking-widest mb-2">A.V.</div>
+                <p class="text-gray-400 text-[10px] uppercase tracking-widest font-medium">© 2026 Авигея Василева</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="https://ratings.fide.com/profile/2961547" target="_blank" class="text-[10px] text-gray-200 hover:text-gold transition uppercase tracking-widest font-bold">FIDE ↗</a>
+                <a href="https://www.instagram.com/avigeav" target="_blank" class="text-[10px] text-gray-200 hover:text-gold transition uppercase tracking-widest font-bold">Instagram ↗</a>
             </div>
         </div>
     </footer>
@@ -376,15 +436,56 @@
     <!-- Модали -->
     <div id="ai-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-midnight/95 backdrop-blur-sm px-4">
         <div class="bg-pearl text-midnight p-6 md:p-12 max-w-2xl w-full relative border border-gold/30">
-            <button onclick="closeModal()" class="absolute top-4 right-6 text-2xl text-gray-400">✕</button>
+            <button onclick="closeModal()" class="absolute top-4 right-6 text-2xl text-gray-400 hover:text-midnight transition">✕</button>
             <h3 id="ai-modal-title" class="text-xl md:text-2xl font-serif text-gold-dark mb-2"></h3>
-            <p id="ai-modal-subtitle" class="text-[10px] uppercase tracking-widest text-gray-500 mb-6 border-b pb-4"></p>
-            <div id="ai-modal-content" class="text-base md:text-lg italic font-serif leading-relaxed"></div>
+            <p id="ai-modal-subtitle" class="text-[10px] uppercase tracking-widest text-gray-500 mb-6 border-b pb-4 font-bold"></p>
+            <div id="ai-modal-content" class="text-base md:text-lg italic font-serif leading-relaxed text-gray-800"></div>
         </div>
     </div>
 
     <script>
         const apiKey = "";
+        
+        const dipData = [
+            { date: "02-04 Март 2026", title: "ДИП по ускорен шахмат", details: "I категория момичета до 12г. • Пловдив", place: "I място" },
+            { date: "02-04 Март 2026", title: "ДИП по блиц шахмат", details: "I категория момичета до 12г. • Пловдив", place: "II място" },
+            { date: "21-26 Окт 2025", title: "ДИП по ускорен шахмат", details: "девойки до 20г. • Перник", place: "II място" },
+            { date: "21-26 Окт 2025", title: "ДИП по блиц шахмат", details: "девойки до 20г. • Перник", place: "II място" },
+            { date: "01-07 Юни 2025", title: "ДИП по класически шахмат", details: "I категория момичета до 10г. • Приморско", place: "III място" },
+            { date: "21-23 Март 2025", title: "ДИП по блиц шахмат", details: "I категория момичета до 10г. • Асеновград", place: "I място" },
+            { date: "22 Ноем 2024", title: "ДИП по Блиц Шахмат", details: "I категория момичета до 14г. • София", place: "II място" },
+            { date: "01-06 Окт 2024", title: "Държавен отборен шампионат (блиц)", details: "I категория момичета до 10г. • Боровец", place: "I място" },
+            { date: "01-06 Окт 2024", title: "Държавен отборен шампионат (ускорен)", details: "I категория момичета до 10г. • Боровец", place: "II място" },
+            { date: "01-06 Окт 2024", title: "Държавен отборен шампионат (класически)", details: "I категория момичета до 10г. • Боровец", place: "III място" }
+        ];
+
+        const othersData = [
+            { date: "08.02.2026", title: "VII МШФ „Херея Дружба“", details: "I категория момичета до 12г. • София", place: "I място" },
+            { date: "29.01. - 01.02.2026", title: "V Мемориал Юлиян Радулски", details: "I категория момичета до 12г. • Пловдив", place: "I място" },
+            { date: "03-04.01.2026", title: "Купа „София“", details: "I категория момичета до 12г. • София", place: "II място" },
+            { date: "10.08.2025", title: "Купа „Милениум“", details: "I категория до 10г. • София", place: "III място" },
+            { date: "19-20.07.2025", title: "Турнир „Шахматно лято“", details: "I категория момичета до 10г. • София", place: "I място" },
+            { date: "18.05.2025", title: "I Фестивал „Питагор“", details: "I категория момичета до 10г. • София", place: "I място" },
+            { date: "03.05.2025", title: "Купа „Млади таланти“", details: "I категория момичета до 10г. • София", place: "I място" },
+            { date: "27.04.2025", title: "Семеен турнир „Цар и пешка“", details: "родител и дете • София", place: "II място" },
+            { date: "06.04.2025", title: "Купа „Милениум“", details: "I категория до 12г. • София", place: "I място" },
+            { date: "16.03.2025", title: "Купа Струма", details: "I категория до 14г. • Перник", place: "III място" },
+            { date: "16.02.2025", title: "VI Фестивал „Херея Дружба“", details: "I категория момичета до 10г. • София", place: "II място" },
+            { date: "09.02.2025", title: "Купа „Милениум“", details: "I категория до 10г. • София", place: "I място" },
+            { date: "14.12.2024", title: "„Коледни звезди“", details: "I категория момичета до 10г. • София", place: "I място" },
+            { date: "30.11.2024", title: "XI Купа „Ан Пасан“", details: "I категория момичета до 10г. • София", place: "I място" },
+            { date: "24.11.2024", title: "Купа „Милениум“", details: "I категория момичета до 14г. • София", place: "I място" },
+            { date: "17.11.2024", title: "Купа „Възраждане“ - II", details: "I категория момичета до 10г. • София", place: "I място" },
+            { date: "27.10.2024", title: "Купа „Милениум“", details: "I категория до 10г. • София", place: "II място" },
+            { date: "20.10.2024", title: "X Купа „Ан Пасан“", details: "I категория момичета до 10г. • София", place: "II място" },
+            { date: "15.09.2024", title: "Турнир „Шахматна мисъл“", details: "I категория момичета до 10г. • София", place: "I място" },
+            { date: "11.08.2024", title: "Купа „Милениум“", details: "I категория до 10г. • София", place: "II място" },
+            { date: "06.07.2024", title: "Купа „Милениум“", details: "I категория момичета до 14г. • София", place: "II място" },
+            { date: "26.05.2024", title: "Седми детски шахматен турнир ЕЛИТ", details: "I категория момичета до 10г. • София", place: "I място" },
+            { date: "30.03.2024", title: "Купа „Милениум“", details: "I категория момичета до 14г. • София", place: "I място" },
+            { date: "17.03.2024", title: "Турнир „Възраждане“", details: "I категория момичета до 10г. • София", place: "III място" },
+            { date: "24.02.2024", title: "Купа „Милениум“", details: "I категория момичета до 14г. • София", place: "III място" }
+        ];
 
         async function fetchWithRetry(url, options) {
             let delay = 1000;
@@ -400,34 +501,36 @@
                 }
             }
         }
-
+        
         async function syncRatings() {
             const btn = document.getElementById('sync-btn');
             btn.classList.add('animate-spin');
-            
-            const prompt = `Потърси в Google актуалния FIDE рейтинг на шахматистката Авигея Василева (FIDE ID 2961547). Извлечи цифрите за Standard, Rapid и Blitz. Върни само и единствено JSON обект в формат: {"std": числo, "rap": числo, "blz": числo}. Не пиши никакъв друг текст.`;
-            
+            const prompt = `Return current FIDE ratings for Avigeya Vasileva (ID 2961547). Output only valid JSON.`;
             try {
                 const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
                 const data = await fetchWithRetry(url, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({
+                    body: JSON.stringify({ 
                         contents: [{parts: [{text: prompt}]}],
-                        tools: [{ "google_search": {} }],
-                        generationConfig: { responseMimeType: "application/json" }
+                        generationConfig: { 
+                            responseMimeType: "application/json",
+                            responseSchema: {
+                                type: "OBJECT",
+                                properties: {
+                                    std: { type: "NUMBER" },
+                                    rap: { type: "NUMBER" },
+                                    blz: { type: "NUMBER" }
+                                }
+                            }
+                        }
                     })
                 });
-
                 const json = JSON.parse(data.candidates[0].content.parts[0].text);
                 if (json.std) document.getElementById('rate-std').innerText = json.std;
                 if (json.rap) document.getElementById('rate-rap').innerText = json.rap;
                 if (json.blz) document.getElementById('rate-blz').innerText = json.blz;
-            } catch (e) {
-                console.error("AI Sync failed");
-            } finally {
-                btn.classList.remove('animate-spin');
-            }
+            } catch (e) { console.error("Sync Error:", e); } finally { btn.classList.remove('animate-spin'); }
         }
 
         function switchTab(tab) {
@@ -443,18 +546,81 @@
             document.getElementById('ai-modal').classList.remove('hidden');
             document.getElementById('ai-modal-title').innerText = title;
             document.getElementById('ai-modal-subtitle').innerText = `${place} | ${date}`;
-            document.getElementById('ai-modal-content').innerText = "Gemini анализира партията...";
-            
+            document.getElementById('ai-modal-content').innerText = "Връзка с AI...";
             try {
                 const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
                 const data = await fetchWithRetry(url, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({contents: [{parts: [{text: `Като шахматен коментатор, напиши 2 изречения за успеха на Авигея на турнира "${title}" (${place}).`}]}]})
+                    body: JSON.stringify({contents: [{parts: [{text: `Като шахматен анализатор, напиши 2 изречения на български за успеха на Авигея Василева на турнира "${title}" (${place}).`}]}]})
                 });
                 document.getElementById('ai-modal-content').innerText = data.candidates[0].content.parts[0].text;
-            } catch(e) { document.getElementById('ai-modal-content').innerText = "Грешка."; }
+            } catch(e) { document.getElementById('ai-modal-content').innerText = "Неуспешна връзка с анализатора."; }
         }
+
+        function updateStats() {
+            const all = [...dipData, ...othersData];
+            let gold = 0, silver = 0, bronze = 0;
+            all.forEach(item => {
+                const p = item.place.toLowerCase().trim();
+                if (p === 'i място' || p === '1 място') gold++;
+                else if (p === 'ii място' || p === '2 място') silver++;
+                else if (p === 'iii място' || p === '3 място') bronze++;
+            });
+            document.getElementById('count-gold').innerText = gold;
+            document.getElementById('count-silver').innerText = silver;
+            document.getElementById('count-bronze').innerText = bronze;
+            document.getElementById('count-total').innerText = all.length;
+        }
+
+        function renderList(data, containerId) {
+            const container = document.getElementById(containerId);
+            let htmlContent = '';
+            data.forEach(item => {
+                const p = item.place.toLowerCase().trim();
+                const isGold = (p === 'i място' || p === '1 място');
+                const isSilver = (p === 'ii място' || p === '2 място');
+                const isBronze = (p === 'iii място' || p === '3 място');
+                
+                let titleColor = "text-midnight";
+                let labelColor = "text-gray-600";
+                let trophyColor = "text-gray-400";
+
+                if (isGold) {
+                    titleColor = "text-gold-dark";
+                    labelColor = "text-gold-dark/70";
+                    trophyColor = "text-[#D4AF37]";
+                } else if (isSilver) {
+                    titleColor = "text-slate-600";
+                    labelColor = "text-slate-500";
+                    trophyColor = "text-[#94a3b8]";
+                } else if (isBronze) {
+                    titleColor = "text-orange-900";
+                    labelColor = "text-orange-800/70";
+                    trophyColor = "text-[#b45309]";
+                }
+                
+                htmlContent += `
+                <div class="flex flex-col md:flex-row md:items-center py-4 md:py-6 border-b border-gray-100 achievement-row group px-2" onclick="analyzeSingleTournament('${item.title}', '${item.place}', '${item.details}', '${item.date}')">
+                    <div class="w-full md:w-1/4 mb-1 md:mb-0 text-[10px] md:text-sm text-gray-500 font-bold uppercase tracking-tighter">${item.date}</div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="font-serif text-lg md:text-xl font-semibold ${titleColor}">${item.title}</h3>
+                        <p class="text-[10px] ${labelColor} mt-1 uppercase tracking-widest font-bold">${item.details}</p>
+                    </div>
+                    <div class="w-full md:w-1/4 text-left md:text-right flex items-center md:justify-end mt-2 md:mt-0 font-bold text-sm md:text-base ${titleColor}">
+                        <svg class="w-4 h-4 md:w-5 md:h-5 mr-2 ${trophyColor}" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0-11a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/><path d="M8 13.5l-2.5 9.5 6.5-3.5 6.5 3.5-2.5-9.5a8.9 8.9 0 0 1-8 0z"/></svg>
+                        ${item.place}
+                    </div>
+                </div>`;
+            });
+            container.innerHTML = htmlContent;
+        }
+
+        window.onload = function() {
+            renderList(dipData, 'dip-container');
+            renderList(othersData, 'others-container');
+            updateStats();
+        };
     </script>
 </body>
 </html>
