@@ -1,0 +1,4 @@
+User-agent: *
+search: yes
+ai-input: yes
+ai-train: no
