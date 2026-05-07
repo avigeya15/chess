@@ -1,4 +1,4 @@
 User-agent: *
-search: yes
-ai-input: yes
-ai-train: no
+Allow: /
+
+Sitemap: https://avigeya.bg10.net/sitemap.xml
