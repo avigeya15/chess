@@ -17,15 +17,14 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Scraper Dependencies
-        run: pip install beautifulsoup4 requests
+      - name: Install Dependencies
+        run: pip install requests
 
       - name: Fetch FIDE Ratings and Update HTML
         run: |
           python -c "
           import requests
           import re
-          from bs4 import BeautifulSoup
 
           url = 'https://ratings.fide.com/profile/2961547'
           headers = {
@@ -34,47 +33,41 @@ jobs:
 
           print('Свързване с FIDE...')
           res = requests.get(url, headers=headers)
-          
           if res.status_code != 200:
-              print(f'Грешка: FIDE върна статус {res.status_code}')
+              print('Грешка при връзка с FIDE')
               exit(1)
 
-          soup = BeautifulSoup(res.text, 'html.parser')
-          
-          # Извличане на целия чист текст от страницата, изчистен от излишни разстояния
-          page_text = ' '.join(soup.get_text(separator=' ').split()).lower()
+          # Превръщаме HTML в изчистен текст само за откриване на рейтингите
+          clean_text = re.sub('<[^<]+?>', ' ', res.text).lower()
+          clean_text = ' '.join(clean_text.split())
 
           std, rapid, blitz = '0', '0', '0'
+          std_match = re.search(r'(\d{3,4})\s*standard|standard\s*(\d{3,4})', clean_text)
+          rapid_match = re.search(r'(\d{3,4})\s*rapid|rapid\s*(\d{3,4})', clean_text)
+          blitz_match = re.search(r'(\d{3,4})\s*blitz|blitz\s*(\d{3,4})', clean_text)
 
-          # Търсене на числата около съответните ключови думи (преди или след тях)
-          std_match = re.search(r'(\d{3,4})\s*standard|standard\s*(\d{3,4})', page_text)
-          rapid_match = re.search(r'(\d{3,4})\s*rapid|rapid\s*(\d{3,4})', page_text)
-          blitz_match = re.search(r'(\d{3,4})\s*blitz|blitz\s*(\d{3,4})', page_text)
+          if std_match: std = std_match.group(1) or std_match.group(2)
+          if rapid_match: rapid = rapid_match.group(1) or rapid_match.group(2)
+          if blitz_match: blitz = blitz_match.group(1) or blitz_match.group(2)
 
-          if std_match:
-              std = std_match.group(1) or std_match.group(2)
-          if rapid_match:
-              rapid = rapid_match.group(1) or rapid_match.group(2)
-          if blitz_match:
-              blitz = blitz_match.group(1) or blitz_match.group(2)
-
-          # Крайна проверка на намерените данни
           if std == '0' or rapid == '0' or blitz == '0':
-              print('Грешка: Неуспешно разчитане на текстовите полета за рейтинг.')
+              print('Неуспешно извличане на рейтингите.')
               exit(1)
 
-          print(f'УСПЕХ! Намерени нови рейтинги -> STD: {std}, RAPID: {rapid}, BLITZ: {blitz}')
+          print(f'УСПЕХ! Намерени рейтинги -> STD: {std}, RAPID: {rapid}, BLITZ: {blitz}')
 
-          # Четене и актуализация на index.html
+          # Отваряме index.html като чист текст, БЕЗ да пренареждаме структурата му
           with open('index.html', 'r', encoding='utf-8') as f:
-              html = f.read()
+              index_text = f.read()
 
-          html = re.sub(r'.*?', f'{std}', html)
-          html = re.sub(r'.*?', f'{rapid}', html)
-          html = re.sub(r'.*?', f'{blitz}', html)
+          # Хирургическа подмяна само на числата вътре в съответните ID-та
+          index_text = re.sub(r'(id=\"rate-std\"[^>]*>)\d+(</div>)', r'\g<1>' + str(std) + r'\2', index_text)
+          index_text = re.sub(r'(id=\"rate-rap\"[^>]*>)\d+(</div>)', r'\g<1>' + str(rapid) + r'\2', index_text)
+          index_text = re.sub(r'(id=\"rate-blz\"[^>]*>)\d+(</div>)', r'\g<1>' + str(blitz) + r'\2', index_text)
 
           with open('index.html', 'w', encoding='utf-8') as f:
-              f.write(html)
+              f.write(index_text)
+          print('Файлът index.html е обновен успешно без промяна на дизайна!')
           "
 
       - name: Commit and Push Changes
