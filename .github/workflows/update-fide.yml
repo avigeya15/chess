@@ -2,8 +2,8 @@ name: Auto Update FIDE Ratings
 
 on:
   schedule:
-    - cron: '0 0 1 * *' # Изпълнява се автоматично в 00:00 ч. на всеки 1-ви ден от месеца
-  workflow_dispatch: # Позволява ви да стартирате проверката и ръчно с бутон от GitHub
+    - cron: '0 0 1 * *' # Автоматично на всеки 1-ви ден от месеца
+  workflow_dispatch: # Бутон за ръчно пускане
 
 jobs:
   update-ratings:
@@ -27,31 +27,45 @@ jobs:
           import re
           from bs4 import BeautifulSoup
 
-          # 1. Сваляне на данните от FIDE
           url = 'https://ratings.fide.com/profile/2961547'
-          headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+          headers = {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+          }
+
+          print('Свързване с FIDE...')
           res = requests.get(url, headers=headers)
+          
+          if res.status_code != 200:
+              print(f'Грешка: FIDE върна статус {res.status_code}')
+              exit(1)
+
           soup = BeautifulSoup(res.text, 'html.parser')
+          
+          # Извличане на целия чист текст от страницата, изчистен от излишни разстояния
+          page_text = ' '.join(soup.get_text(separator=' ').split()).lower()
 
           std, rapid, blitz = '0', '0', '0'
 
-          # 2. Парсване на новата структура на таблицата на FIDE
-          for row in soup.find_all('div', class_='profile-top-rating-table-row'):
-              cells = row.find_all('div', class_='profile-top-rating-table-cell')
-              if len(cells) >= 2:
-                  mode = cells[0].text.strip().lower()
-                  val = cells[1].text.strip()
-                  if 'std' in mode: std = val
-                  elif 'rapid' in mode: rapid = val
-                  elif 'blitz' in mode: blitz = val
+          # Търсене на числата около съответните ключови думи (преди или след тях)
+          std_match = re.search(r'(\d{3,4})\s*standard|standard\s*(\d{3,4})', page_text)
+          rapid_match = re.search(r'(\d{3,4})\s*rapid|rapid\s*(\d{3,4})', page_text)
+          blitz_match = re.search(r'(\d{3,4})\s*blitz|blitz\s*(\d{3,4})', page_text)
 
+          if std_match:
+              std = std_match.group(1) or std_match.group(2)
+          if rapid_match:
+              rapid = rapid_match.group(1) or rapid_match.group(2)
+          if blitz_match:
+              blitz = blitz_match.group(1) or blitz_match.group(2)
+
+          # Крайна проверка на намерените данни
           if std == '0' or rapid == '0' or blitz == '0':
-              print('Грешка при извличането на рейтингите. Проверете кода.')
+              print('Грешка: Неуспешно разчитане на текстовите полета за рейтинг.')
               exit(1)
 
-          print(f'Намерени рейтинги -> STD: {std}, RAPID: {rapid}, BLITZ: {blitz}')
+          print(f'УСПЕХ! Намерени нови рейтинги -> STD: {std}, RAPID: {rapid}, BLITZ: {blitz}')
 
-          # 3. Четене и обновяване на index.html чрез маркерите
+          # Четене и актуализация на index.html
           with open('index.html', 'r', encoding='utf-8') as f:
               html = f.read()
 
