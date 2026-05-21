@@ -1,0 +1,71 @@
+name: Auto Update FIDE Ratings
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # Изпълнява се автоматично в 00:00 ч. на всеки 1-ви ден от месеца
+  workflow_dispatch: # Позволява ви да стартирате проверката и ръчно с бутон от GitHub
+
+jobs:
+  update-ratings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Scraper Dependencies
+        run: pip install beautifulsoup4 requests
+
+      - name: Fetch FIDE Ratings and Update HTML
+        run: |
+          python -c "
+          import requests
+          import re
+          from bs4 import BeautifulSoup
+
+          # 1. Сваляне на данните от FIDE
+          url = 'https://ratings.fide.com/profile/2961547'
+          headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+          res = requests.get(url, headers=headers)
+          soup = BeautifulSoup(res.text, 'html.parser')
+
+          std, rapid, blitz = '0', '0', '0'
+
+          # 2. Парсване на новата структура на таблицата на FIDE
+          for row in soup.find_all('div', class_='profile-top-rating-table-row'):
+              cells = row.find_all('div', class_='profile-top-rating-table-cell')
+              if len(cells) >= 2:
+                  mode = cells[0].text.strip().lower()
+                  val = cells[1].text.strip()
+                  if 'std' in mode: std = val
+                  elif 'rapid' in mode: rapid = val
+                  elif 'blitz' in mode: blitz = val
+
+          if std == '0' or rapid == '0' or blitz == '0':
+              print('Грешка при извличането на рейтингите. Проверете кода.')
+              exit(1)
+
+          print(f'Намерени рейтинги -> STD: {std}, RAPID: {rapid}, BLITZ: {blitz}')
+
+          # 3. Четене и обновяване на index.html чрез маркерите
+          with open('index.html', 'r', encoding='utf-8') as f:
+              html = f.read()
+
+          html = re.sub(r'.*?', f'{std}', html)
+          html = re.sub(r'.*?', f'{rapid}', html)
+          html = re.sub(r'.*?', f'{blitz}', html)
+
+          with open('index.html', 'w', encoding='utf-8') as f:
+              f.write(html)
+          "
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "FIDE Rating Bot"
+          git config --global user.email "bot@github.com"
+          git add index.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Автоматично обновяване на FIDE рейтингите" && git push)
