@@ -20,7 +20,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
 
       - name: Install Dependencies
         run: |
@@ -44,9 +43,6 @@ jobs:
           URL = f"https://ratings.fide.com/profile/{FIDE_ID}"
           INDEX_FILE = Path("index.html")
 
-          # ------------------------------------------------------------
-          # HTTP session с retry стратегия
-          # ------------------------------------------------------------
           session = requests.Session()
 
           retry = Retry(
@@ -90,8 +86,6 @@ jobs:
               response.raise_for_status()
 
           except requests.RequestException as exc:
-              # Временен проблем с FIDE не трябва да поврежда сайта
-              # и не трябва да прави месечния workflow червен.
               print("")
               print("⚠️ FIDE временно не е достъпен.")
               print(f"Причина: {exc}")
@@ -101,17 +95,6 @@ jobs:
 
           print(f"✅ FIDE отговори успешно: HTTP {response.status_code}")
 
-          # ------------------------------------------------------------
-          # Извличане на рейтингите
-          #
-          # Текущата FIDE страница показва:
-          #   <rating> STANDARD
-          #   <rating> RAPID
-          #   <rating> BLITZ
-          #
-          # Не разчитаме на конкретни CSS класове, за да е по-устойчиво
-          # при козметични промени по сайта.
-          # ------------------------------------------------------------
           soup = BeautifulSoup(response.text, "html.parser")
           tokens = list(soup.stripped_strings)
 
@@ -124,20 +107,16 @@ jobs:
 
               for i, token in enumerate(tokens):
                   if token.strip().upper() == label:
-                      # Търсим най-близкото числово поле преди етикета.
                       for j in range(i - 1, max(-1, i - 8), -1):
                           candidate = tokens[j].replace("\xa0", " ").strip()
                           if is_rating(candidate):
                               return candidate
-
               return None
 
           std = find_rating_before_label("STANDARD")
           rapid = find_rating_before_label("RAPID")
           blitz = find_rating_before_label("BLITZ")
 
-          # Fallback: текстов regex, ако FIDE промени HTML контейнерите,
-          # но запази визуалния ред rating -> label.
           if not all((std, rapid, blitz)):
               clean_text = " ".join(soup.stripped_strings)
               clean_text = re.sub(r"\s+", " ", clean_text)
@@ -163,9 +142,6 @@ jobs:
           print(f"  Blitz:    {blitz}")
 
           if not all((std, rapid, blitz)):
-              # Това вече не е обикновен network timeout.
-              # Най-вероятно FIDE е променил структурата си, затова
-              # workflow-ът трябва да сигнализира за проблем.
               print("")
               print("❌ Не успях да извлека всички FIDE рейтинги.")
               print("Вероятно структурата на FIDE страницата е променена.")
@@ -178,9 +154,6 @@ jobs:
               f"STD={std}, RAPID={rapid}, BLITZ={blitz}"
           )
 
-          # ------------------------------------------------------------
-          # Безопасно обновяване на index.html
-          # ------------------------------------------------------------
           if not INDEX_FILE.exists():
               print(f"❌ Файлът {INDEX_FILE} не съществува.")
               sys.exit(1)
