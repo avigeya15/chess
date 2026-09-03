@@ -2,12 +2,16 @@ name: Auto Update FIDE Ratings
 
 on:
   schedule:
-    - cron: '0 0 1 * *' # Автоматично на всеки 1-ви ден от месеца
-  workflow_dispatch: # Бутон за ръчно пускане
+    - cron: '0 0 1 * *' # Всеки 1-ви ден от месеца в 00:00 UTC
+  workflow_dispatch: # Ръчно стартиране
+
+permissions:
+  contents: write
 
 jobs:
   update-ratings:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -15,64 +19,226 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.12'
+          cache: 'pip'
 
       - name: Install Dependencies
-        run: pip install requests
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
 
       - name: Fetch FIDE Ratings and Update HTML
+        shell: bash
         run: |
-          python -c "
-          import requests
+          python <<'PY'
           import re
+          import sys
+          from pathlib import Path
 
-          url = 'https://ratings.fide.com/profile/2961547'
-          headers = {
-              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
-          }
+          import requests
+          from bs4 import BeautifulSoup
+          from requests.adapters import HTTPAdapter
+          from urllib3.util.retry import Retry
 
-          print('Свързване с FIDE...')
-          res = requests.get(url, headers=headers)
-          if res.status_code != 200:
-              print('Грешка при връзка с FIDE')
-              exit(1)
+          FIDE_ID = "2961547"
+          URL = f"https://ratings.fide.com/profile/{FIDE_ID}"
+          INDEX_FILE = Path("index.html")
 
-          # Превръщаме HTML в изчистен текст само за откриване на рейтингите
-          clean_text = re.sub('<[^<]+?>', ' ', res.text).lower()
-          clean_text = ' '.join(clean_text.split())
+          # ------------------------------------------------------------
+          # HTTP session с retry стратегия
+          # ------------------------------------------------------------
+          session = requests.Session()
 
-          std, rapid, blitz = '0', '0', '0'
-          std_match = re.search(r'(\d{3,4})\s*standard|standard\s*(\d{3,4})', clean_text)
-          rapid_match = re.search(r'(\d{3,4})\s*rapid|rapid\s*(\d{3,4})', clean_text)
-          blitz_match = re.search(r'(\d{3,4})\s*blitz|blitz\s*(\d{3,4})', clean_text)
+          retry = Retry(
+              total=4,
+              connect=4,
+              read=4,
+              status=4,
+              backoff_factor=3,
+              status_forcelist=(429, 500, 502, 503, 504),
+              allowed_methods=frozenset(["GET"]),
+              raise_on_status=False,
+          )
 
-          if std_match: std = std_match.group(1) or std_match.group(2)
-          if rapid_match: rapid = rapid_match.group(1) or rapid_match.group(2)
-          if blitz_match: blitz = blitz_match.group(1) or blitz_match.group(2)
+          adapter = HTTPAdapter(max_retries=retry)
+          session.mount("https://", adapter)
+          session.mount("http://", adapter)
 
-          if std == '0' or rapid == '0' or blitz == '0':
-              print('Неуспешно извличане на рейтингите.')
-              exit(1)
+          session.headers.update({
+              "User-Agent": (
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/140.0.0.0 Safari/537.36"
+              ),
+              "Accept": (
+                  "text/html,application/xhtml+xml,application/xml;q=0.9,"
+                  "image/avif,image/webp,*/*;q=0.8"
+              ),
+              "Accept-Language": "en-US,en;q=0.9",
+              "Cache-Control": "no-cache",
+              "Pragma": "no-cache",
+          })
 
-          print(f'УСПЕХ! Намерени рейтинги -> STD: {std}, RAPID: {rapid}, BLITZ: {blitz}')
+          print(f"Свързване с FIDE профил {FIDE_ID}...")
 
-          # Отваряме index.html като чист текст, БЕЗ да пренареждаме структурата му
-          with open('index.html', 'r', encoding='utf-8') as f:
-              index_text = f.read()
+          try:
+              response = session.get(
+                  URL,
+                  timeout=(10, 30),
+                  allow_redirects=True,
+              )
+              response.raise_for_status()
 
-          # Хирургическа подмяна само на числата вътре в съответните ID-та
-          index_text = re.sub(r'(id=\"rate-std\"[^>]*>)\d+(</div>)', r'\g<1>' + str(std) + r'\2', index_text)
-          index_text = re.sub(r'(id=\"rate-rap\"[^>]*>)\d+(</div>)', r'\g<1>' + str(rapid) + r'\2', index_text)
-          index_text = re.sub(r'(id=\"rate-blz\"[^>]*>)\d+(</div>)', r'\g<1>' + str(blitz) + r'\2', index_text)
+          except requests.RequestException as exc:
+              # Временен проблем с FIDE не трябва да поврежда сайта
+              # и не трябва да прави месечния workflow червен.
+              print("")
+              print("⚠️ FIDE временно не е достъпен.")
+              print(f"Причина: {exc}")
+              print("index.html няма да бъде променян.")
+              print("Старите рейтинги остават активни.")
+              sys.exit(0)
 
-          with open('index.html', 'w', encoding='utf-8') as f:
-              f.write(index_text)
-          print('Файлът index.html е обновен успешно без промяна на дизайна!')
-          "
+          print(f"✅ FIDE отговори успешно: HTTP {response.status_code}")
+
+          # ------------------------------------------------------------
+          # Извличане на рейтингите
+          #
+          # Текущата FIDE страница показва:
+          #   <rating> STANDARD
+          #   <rating> RAPID
+          #   <rating> BLITZ
+          #
+          # Не разчитаме на конкретни CSS класове, за да е по-устойчиво
+          # при козметични промени по сайта.
+          # ------------------------------------------------------------
+          soup = BeautifulSoup(response.text, "html.parser")
+          tokens = list(soup.stripped_strings)
+
+          def is_rating(value):
+              value = value.replace("\xa0", " ").strip()
+              return bool(re.fullmatch(r"\d{3,4}", value)) and 500 <= int(value) <= 4000
+
+          def find_rating_before_label(label):
+              label = label.upper()
+
+              for i, token in enumerate(tokens):
+                  if token.strip().upper() == label:
+                      # Търсим най-близкото числово поле преди етикета.
+                      for j in range(i - 1, max(-1, i - 8), -1):
+                          candidate = tokens[j].replace("\xa0", " ").strip()
+                          if is_rating(candidate):
+                              return candidate
+
+              return None
+
+          std = find_rating_before_label("STANDARD")
+          rapid = find_rating_before_label("RAPID")
+          blitz = find_rating_before_label("BLITZ")
+
+          # Fallback: текстов regex, ако FIDE промени HTML контейнерите,
+          # но запази визуалния ред rating -> label.
+          if not all((std, rapid, blitz)):
+              clean_text = " ".join(soup.stripped_strings)
+              clean_text = re.sub(r"\s+", " ", clean_text)
+
+              def regex_rating(label):
+                  match = re.search(
+                      rf"\b(\d{{3,4}})\s+{label}\b",
+                      clean_text,
+                      flags=re.IGNORECASE,
+                  )
+                  if match and is_rating(match.group(1)):
+                      return match.group(1)
+                  return None
+
+              std = std or regex_rating("STANDARD")
+              rapid = rapid or regex_rating("RAPID")
+              blitz = blitz or regex_rating("BLITZ")
+
+          print("")
+          print("Намерени стойности:")
+          print(f"  Standard: {std}")
+          print(f"  Rapid:    {rapid}")
+          print(f"  Blitz:    {blitz}")
+
+          if not all((std, rapid, blitz)):
+              # Това вече не е обикновен network timeout.
+              # Най-вероятно FIDE е променил структурата си, затова
+              # workflow-ът трябва да сигнализира за проблем.
+              print("")
+              print("❌ Не успях да извлека всички FIDE рейтинги.")
+              print("Вероятно структурата на FIDE страницата е променена.")
+              print("index.html НЕ е променян.")
+              sys.exit(1)
+
+          print("")
+          print(
+              f"✅ FIDE рейтинги: "
+              f"STD={std}, RAPID={rapid}, BLITZ={blitz}"
+          )
+
+          # ------------------------------------------------------------
+          # Безопасно обновяване на index.html
+          # ------------------------------------------------------------
+          if not INDEX_FILE.exists():
+              print(f"❌ Файлът {INDEX_FILE} не съществува.")
+              sys.exit(1)
+
+          index_text = INDEX_FILE.read_text(encoding="utf-8")
+          updated_text = index_text
+
+          replacements = [
+              ("rate-std", std),
+              ("rate-rap", rapid),
+              ("rate-blz", blitz),
+          ]
+
+          for element_id, rating in replacements:
+              pattern = (
+                  rf'(id=["\']{re.escape(element_id)}["\'][^>]*>)'
+                  rf'\s*\d+\s*'
+                  rf'(</div>)'
+              )
+
+              updated_text, count = re.subn(
+                  pattern,
+                  rf'\g<1>{rating}\g<2>',
+                  updated_text,
+                  count=1,
+                  flags=re.IGNORECASE,
+              )
+
+              if count != 1:
+                  print(
+                      f'❌ Не е намерен точно един div с id="{element_id}". '
+                      f"Намерени: {count}"
+                  )
+                  print("index.html НЕ е записан.")
+                  sys.exit(1)
+
+          if updated_text == index_text:
+              print("")
+              print("ℹ️ Рейтингите вече са актуални. Няма промени за commit.")
+              sys.exit(0)
+
+          INDEX_FILE.write_text(updated_text, encoding="utf-8")
+
+          print("")
+          print("✅ index.html е обновен успешно.")
+          print("✅ Дизайнът и останалата HTML структура не са променяни.")
+          PY
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "FIDE Rating Bot"
-          git config --global user.email "bot@github.com"
+          git config user.name "FIDE Rating Bot"
+          git config user.email "bot@github.com"
+
           git add index.html
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Автоматично обновяване на FIDE рейтингите" && git push)
+
+          if git diff --cached --quiet; then
+            echo "Няма промени за commit."
+          else
+            git commit -m "🤖 Автоматично обновяване на FIDE рейтингите"
+            git push
+          fi
