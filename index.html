@@ -1,200 +1,623 @@
 <!DOCTYPE html>
-<html lang="bg" class="scroll-smooth">
+<html lang="bg" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Авигея Василева | AFM (Arena FIDE Master) - Официален уебсайт</title>
-    <meta name="description" content="Официален сайт на Авигея Василева - Arena FIDE Master (AFM). Шахматни успехи, международни рейтинги, награди в компютърното моделиране и изкуството.">
-    <meta name="keywords" content="Авигея Василева, шахматистка, AFM, Arena FIDE Master, шахматни турнири България, FIDE рейтинг, шахматни постижения, Scratch програмиране, пътна безопасност София">
-    <meta name="author" content="Авигея Василева">
-    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#080808">
+    <meta name="color-scheme" content="dark light">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Авигея Василева",
-      "givenName": "Авигея",
-      "familyName": "Василева",
-      "gender": "Female",
-      "jobTitle": "Шахматистка",
-      "honorificPrefix": "AFM",
-      "description": "Arena FIDE Master (AFM) с над 38 престижни отличия в българския шахмат, национални постижения в компютърното моделиране и награди в изобразителното изкуство.",
-      "url": "https://ratings.fide.com/profile/2961547",
-      "image": "avigea.jpg",
-      "sameAs": [
-        "https://www.instagram.com/avigeav",
-        "https://worldchess.com/profile/888098",
-        "https://ratings.fide.com/profile/2961547"
-      ],
-      "knowsAbout": ["Шахмат", "Chess Strategy", "Scratch Programming", "Animation", "Fine Arts"],
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "Arena FIDE Master",
-        "recognizedBy": {
-          "@type": "Organization",
-          "name": "FIDE - International Chess Federation"
-        }
-      }
-    }
-    </script>
+    <title>Авигея Василева – AFM шахматистка | Официален сайт</title>
+    <meta name="description" content="Официален сайт на Авигея Василева – Arena FIDE Master (AFM). Шахматни постижения, FIDE рейтинги, турнири, програмиране и изобразително изкуство.">
+    <meta name="author" content="Авигея Василева">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://avigeya.bg10.net/">
 
     <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://ratings.fide.com/profile/2961547">
-    <meta property="og:title" content="Авигея Василева | AFM Шахматистка">
-    <meta property="og:description" content="Проследете успехите на една от младите надежди на българския шахмат. Arena FIDE Master, програмист и творец.">
-    <meta property="og:image" content="avigea.jpg">
+    <meta property="og:url" content="https://avigeya.bg10.net/">
+    <meta property="og:title" content="Авигея Василева – Arena FIDE Master">
+    <meta property="og:description" content="Шахматни успехи, FIDE рейтинги и творчески постижения на Авигея Василева.">
+    <meta property="og:image" content="https://avigeya.bg10.net/avigea.jpg">
+    <meta property="og:image:alt" content="Авигея Василева с купи и медали">
+    <meta property="og:locale" content="bg_BG">
     <meta property="profile:first_name" content="Авигея">
     <meta property="profile:last_name" content="Василева">
     <meta property="profile:username" content="avigeav">
     <meta property="profile:gender" content="female">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Авигея Василева | Arena FIDE Master">
-    <meta name="twitter:description" content="Шахматни успехи и статистика на Авигея Василева.">
-    <meta name="twitter:image" content="avigea.jpg">
+    <meta name="twitter:title" content="Авигея Василева – Arena FIDE Master">
+    <meta name="twitter:description" content="Шахматни успехи, FIDE рейтинги и творчески постижения.">
+    <meta name="twitter:image" content="https://avigeya.bg10.net/avigea.jpg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        midnight: '#0a0a0a',
-                        gold: {
-                            DEFAULT: '#D4AF37',
-                            light: '#F3E5AB',
-                            dark: '#997A00'
-                        },
-                        pearl: '#FAFAFA',
-                        code: '#64ffda',
-                        art: '#ff7043'
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="avigea.jpg" fetchpriority="high">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://avigeya.bg10.net/#person",
+          "name": "Авигея Василева",
+          "givenName": "Авигея",
+          "familyName": "Василева",
+          "gender": "Female",
+          "jobTitle": "Шахматистка",
+          "honorificPrefix": "AFM",
+          "description": "Arena FIDE Master (AFM) с многобройни отличия в българския шахмат и постижения в компютърното моделиране и изобразителното изкуство.",
+          "url": "https://avigeya.bg10.net/",
+          "image": "https://avigeya.bg10.net/avigea.jpg",
+          "sameAs": [
+            "https://www.instagram.com/avigeav",
+            "https://worldchess.com/profile/888098",
+            "https://ratings.fide.com/profile/2961547"
+          ],
+          "knowsAbout": ["Шахмат", "Chess Strategy", "Scratch Programming", "Animation", "Fine Arts"],
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Arena FIDE Master",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "FIDE – International Chess Federation"
             }
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://avigeya.bg10.net/#website",
+          "url": "https://avigeya.bg10.net/",
+          "name": "Авигея Василева – Официален сайт",
+          "inLanguage": "bg-BG",
+          "about": {"@id": "https://avigeya.bg10.net/#person"}
         }
+      ]
+    }
     </script>
 
     <style>
-        body { background-color: #0a0a0a; color: #FAFAFA; }
-        .premium-bg {
-            background-image: 
-                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 4rem 4rem;
-            background-position: center center;
+        :root {
+            --bg: #080808;
+            --bg-soft: #101010;
+            --surface: #151515;
+            --surface-2: #1b1b1b;
+            --pearl: #f8f7f3;
+            --muted: #aaa8a2;
+            --gold: #d4af37;
+            --gold-light: #f0d77f;
+            --gold-dark: #8f7212;
+            --code: #64ffda;
+            --art: #ff7043;
+            --line: rgba(255,255,255,.10);
+            --shadow: 0 24px 70px rgba(0,0,0,.34);
+            --radius: 18px;
+            --container: 1180px;
+            --nav-height: 76px;
         }
-        .fade-in-up { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        .tab-btn { position: relative; transition: color 0.3s ease; color: #cbd5e1; }
-        .tab-btn::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background-color: #D4AF37; transition: width 0.3s ease; }
-        .tab-active { color: #D4AF37; }
-        .tab-active::after { width: 100%; }
-        .achievement-row { transition: all 0.3s ease; cursor: pointer; }
-        .achievement-row:hover { background-color: rgba(255,255,255,0.02); }
-        .img-fallback { background: #111; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; padding: 20px; border: 1px solid #222; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        .code-card {
-            background: linear-gradient(145deg, rgba(30,30,30,0.95), rgba(15,15,15,1));
-            border: 1px solid rgba(100, 255, 218, 0.2);
-        }
-        .art-card {
-            background: linear-gradient(145deg, rgba(40,25,20,0.95), rgba(15,10,10,1));
-            border: 1px solid rgba(255, 112, 67, 0.3);
-        }
-        .step-node { position: relative; }
-        .step-node::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: rgba(255, 112, 67, 0.2); margin-left: 11px; }
-        .step-node:last-child::before { display: none; }
-    </style>
-    <meta name="google-site-verification" content="t10QosXSfP6Rt3NIsFHhNxI75VpvS8w44R5soxgcogg" />
-</head>
-<body class="antialiased selection:bg-gold selection:text-midnight">
 
-    <nav class="fixed w-full z-50 bg-midnight/90 backdrop-blur-md border-b border-white/10 py-4 md:py-5 transition-all duration-300">
-        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
-            <div class="text-lg md:text-xl font-serif tracking-widest text-pearl flex items-center gap-3">
-                <span class="text-gold text-xl md:text-2xl">♛</span>
-                AVIGEYA VASILEVA
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 18px); }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--pearl);
+            font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        body.modal-open { overflow: hidden; }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+        button, input { font: inherit; }
+        button { color: inherit; }
+        ::selection { background: var(--gold); color: #080808; }
+        :focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+
+        .skip-link {
+            position: fixed; left: 16px; top: -80px; z-index: 999;
+            padding: 10px 14px; background: var(--pearl); color: #111; border-radius: 8px;
+            transition: top .2s ease;
+        }
+        .skip-link:focus { top: 14px; }
+        .container { width: min(calc(100% - 40px), var(--container)); margin-inline: auto; }
+        .section { padding: 108px 0; }
+        .section--light { background: #f6f4ef; color: #121212; }
+        .eyebrow {
+            display: flex; align-items: center; gap: 14px; margin: 0 0 16px;
+            color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+        }
+        .eyebrow::before { content: ""; width: 38px; height: 1px; background: currentColor; }
+        .section-title { margin: 0; font-family: "Playfair Display", Georgia, serif; font-size: clamp(2.3rem, 5vw, 4.2rem); line-height: 1.05; font-weight: 500; }
+        .section-title em { color: var(--gold); font-weight: 500; }
+        .section-intro { max-width: 650px; color: #666; margin: 20px 0 0; }
+
+        /* Navigation */
+        .site-nav {
+            position: fixed; inset: 0 0 auto; z-index: 80; height: var(--nav-height);
+            background: rgba(8,8,8,.82); border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+        }
+        .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .brand { display: inline-flex; align-items: center; gap: 11px; font-family: "Playfair Display", serif; letter-spacing: .14em; font-size: .98rem; white-space: nowrap; }
+        .brand-mark { color: var(--gold); font-size: 1.45rem; }
+        .desktop-nav { display: flex; align-items: center; gap: clamp(16px, 2.5vw, 30px); }
+        .desktop-nav a {
+            position: relative; color: #d6d4cf; font-size: .67rem; font-weight: 700;
+            letter-spacing: .16em; text-transform: uppercase; padding: 9px 0;
+        }
+        .desktop-nav a::after {
+            content: ""; position: absolute; left: 0; right: 100%; bottom: 3px; height: 1px;
+            background: var(--gold); transition: right .25s ease;
+        }
+        .desktop-nav a:hover, .desktop-nav a[aria-current="true"] { color: var(--gold-light); }
+        .desktop-nav a:hover::after, .desktop-nav a[aria-current="true"]::after { right: 0; }
+        .menu-toggle {
+            display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px;
+            background: rgba(255,255,255,.03); cursor: pointer;
+        }
+        .menu-toggle span, .menu-toggle::before, .menu-toggle::after {
+            content: ""; display: block; width: 20px; height: 1px; background: currentColor; margin: 5px auto; transition: .2s ease;
+        }
+        .menu-toggle[aria-expanded="true"] span { opacity: 0; }
+        .menu-toggle[aria-expanded="true"]::before { transform: translateY(6px) rotate(45deg); }
+        .menu-toggle[aria-expanded="true"]::after { transform: translateY(-6px) rotate(-45deg); }
+        .mobile-nav {
+            display: none; position: fixed; z-index: 79; top: var(--nav-height); left: 0; right: 0;
+            padding: 10px 20px 20px; background: rgba(8,8,8,.97); border-bottom: 1px solid var(--line);
+        }
+        .mobile-nav.is-open { display: grid; }
+        .mobile-nav a { padding: 14px 0; border-bottom: 1px solid var(--line); color: #e4e1dc; font-size: .76rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+
+        /* Hero */
+        .hero {
+            position: relative; min-height: 100svh; padding: calc(var(--nav-height) + 72px) 0 70px; overflow: hidden;
+            display: flex; align-items: center;
+            background:
+                radial-gradient(circle at 78% 28%, rgba(212,175,55,.12), transparent 26%),
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
+                var(--bg);
+            background-size: auto, 64px 64px, 64px 64px, auto;
+        }
+        .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 170px; background: linear-gradient(transparent, var(--bg)); pointer-events: none; }
+        .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(50px, 8vw, 110px); }
+        .hero-copy { max-width: 670px; }
+        .hero-title { margin: 0 0 28px; font-family: "Playfair Display", Georgia, serif; font-size: clamp(3.8rem, 7.4vw, 7rem); line-height: .96; font-weight: 500; letter-spacing: -.02em; }
+        .hero-title em { color: #d7d5d0; font-weight: 500; }
+        .hero-text { max-width: 640px; margin: 0 0 34px; color: #c6c4be; font-size: clamp(.98rem, 1.6vw, 1.1rem); }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        .btn {
+            min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 13px 20px; border: 1px solid var(--line); background: transparent; border-radius: 10px;
+            font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; cursor: pointer;
+            transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
+        }
+        .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.35); }
+        .btn--gold { border-color: var(--gold); color: var(--gold-light); }
+        .btn--gold:hover { background: var(--gold); color: #111; }
+        .portrait-wrap { position: relative; width: min(100%, 430px); justify-self: end; }
+        .portrait-frame {
+            position: relative; aspect-ratio: 2 / 3; border-radius: 22px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,.18); box-shadow: var(--shadow); background: #111;
+        }
+        .portrait-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 66%, rgba(0,0,0,.45)); pointer-events: none; }
+        .portrait-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+        .portrait-frame:hover img { transform: scale(1.025); }
+        .portrait-outline { position: absolute; inset: 24px -24px -24px 24px; border: 1px solid rgba(212,175,55,.25); border-radius: 22px; z-index: -1; }
+        .hero-badge {
+            position: absolute; left: -36px; bottom: 36px; z-index: 3; min-width: 158px;
+            padding: 16px 18px; border: 1px solid rgba(212,175,55,.25); border-radius: 14px;
+            background: rgba(13,13,13,.88); backdrop-filter: blur(10px); box-shadow: 0 18px 50px rgba(0,0,0,.35);
+        }
+        .hero-badge strong { display: block; color: var(--gold-light); font-family: "Playfair Display", serif; font-size: 2.15rem; line-height: 1; font-weight: 500; }
+        .hero-badge span { display: block; margin-top: 7px; color: #b8b5af; font-size: .62rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+
+        /* Stats */
+        .stats { position: relative; z-index: 2; padding: 0 0 82px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015)); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .stat { padding: 30px 28px; border-right: 1px solid var(--line); }
+        .stat:last-child { border-right: 0; }
+        .stat-value { font-family: "Playfair Display", serif; font-size: clamp(2.4rem, 4vw, 4.3rem); line-height: 1; font-weight: 500; }
+        .stat--gold .stat-value { color: var(--gold-light); }
+        .stat--silver .stat-value { color: #d5d9df; }
+        .stat--bronze .stat-value { color: #bf7b48; }
+        .stat-label { display: block; margin-top: 10px; color: #95928c; font-size: .64rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+
+        /* Achievements */
+        .achievements-header { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; margin-bottom: 56px; }
+        .rating-card { display: grid; grid-template-columns: repeat(3, 1fr); min-width: 410px; border-radius: 14px; overflow: hidden; background: #111; color: #fff; box-shadow: 0 22px 50px rgba(0,0,0,.16); }
+        .rating { padding: 20px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,.10); }
+        .rating:last-child { border-right: 0; }
+        .rating strong { display: block; font-family: "Playfair Display", serif; font-size: 1.85rem; font-weight: 500; }
+        .rating span { display: block; margin-top: 6px; color: var(--gold); font-size: .57rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+        .tabs { display: flex; gap: 28px; border-bottom: 1px solid #d9d6ce; overflow-x: auto; scrollbar-width: none; }
+        .tabs::-webkit-scrollbar { display: none; }
+        .tab {
+            position: relative; flex: 0 0 auto; padding: 0 0 16px; border: 0; background: none; color: #747069; cursor: pointer;
+            font-size: .72rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase;
+        }
+        .tab::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -1px; height: 2px; background: var(--gold); transition: right .25s ease; }
+        .tab[aria-selected="true"] { color: var(--gold-dark); }
+        .tab[aria-selected="true"]::after { right: 0; }
+        .achievement-list { margin-top: 18px; }
+        .achievement {
+            width: 100%; display: grid; grid-template-columns: 155px 1fr 120px; gap: 26px; align-items: center;
+            padding: 22px 12px; border: 0; border-bottom: 1px solid #e5e1d9; background: transparent; text-align: left; cursor: pointer;
+            transition: background .18s ease, transform .18s ease;
+        }
+        .achievement:hover { background: rgba(212,175,55,.055); }
+        .achievement:focus-visible { outline-offset: -2px; }
+        .achievement-date { color: #79756e; font-size: .68rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+        .achievement-title { margin: 0; font-family: "Playfair Display", serif; font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.25; font-weight: 600; color: #191919; }
+        .achievement-meta { margin: 5px 0 0; color: #777169; font-size: .65rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
+        .achievement-place { justify-self: end; display: inline-flex; align-items: center; gap: 8px; font-size: .79rem; font-weight: 800; white-space: nowrap; }
+        .medal-dot { width: 11px; height: 11px; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(0,0,0,.12); }
+        .is-gold .achievement-title, .is-gold .achievement-place { color: #8d6e0b; }
+        .is-gold .medal-dot { background: #d4af37; }
+        .is-silver .achievement-title, .is-silver .achievement-place { color: #5e6671; }
+        .is-silver .medal-dot { background: #aab2bd; }
+        .is-bronze .achievement-title, .is-bronze .achievement-place { color: #8a4b23; }
+        .is-bronze .medal-dot { background: #b76e3c; }
+        .empty-state { padding: 32px 12px; color: #6f6b65; }
+
+        /* Creative */
+        .creative-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 34px; margin-top: 52px; align-items: stretch; }
+        .card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015)); box-shadow: var(--shadow); }
+        .code-card { padding: 34px; border-color: rgba(100,255,218,.18); }
+        .card-title { margin: 0 0 14px; font-family: "Playfair Display", serif; font-size: 1.75rem; font-weight: 500; }
+        .card-copy { margin: 0 0 30px; color: #bbb8b1; }
+        .timeline { display: grid; gap: 0; }
+        .timeline-item { position: relative; display: grid; grid-template-columns: 28px 1fr; gap: 17px; padding-bottom: 24px; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::after { content: ""; position: absolute; left: 13px; top: 28px; bottom: 0; width: 1px; background: rgba(100,255,218,.18); }
+        .timeline-item:last-child::after { display: none; }
+        .timeline-no { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; z-index: 1; background: var(--code); color: #0c1514; font-size: .7rem; font-weight: 800; }
+        .timeline h4 { margin: 2px 0 4px; font-size: .9rem; }
+        .timeline p { margin: 0; color: #aaa7a0; font-size: .78rem; }
+        .media-card { display: flex; flex-direction: column; min-height: 100%; }
+        .media-card .image-box { flex: 1; min-height: 360px; background: #fff; }
+        .media-card img { width: 100%; height: 100%; object-fit: contain; }
+        .media-caption { padding: 17px 20px; border-top: 1px solid var(--line); }
+        .media-caption strong { font-family: "Playfair Display", serif; font-size: 1rem; font-weight: 500; }
+        .media-caption span { display: block; margin-top: 4px; color: var(--code); font-size: .58rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+
+        /* Art */
+        .art-heading .eyebrow { color: var(--art); }
+        .art-heading .section-title em { color: var(--art); }
+        .art-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; margin-top: 52px; }
+        .art-story { padding: 34px; border-color: rgba(255,112,67,.18); background: linear-gradient(145deg, rgba(255,112,67,.07), rgba(255,255,255,.015)); }
+        .art-story-top { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
+        .pill { flex: 0 0 auto; padding: 7px 11px; border: 1px solid rgba(255,112,67,.28); border-radius: 999px; color: var(--art); background: rgba(255,112,67,.08); font-size: .58rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+        .art-story .card-copy strong { color: var(--art); }
+        .art-points { display: grid; gap: 20px; margin-top: 26px; padding-left: 18px; border-left: 1px solid rgba(255,112,67,.25); }
+        .art-point { position: relative; }
+        .art-point::before { content: ""; position: absolute; left: -23px; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--art); box-shadow: 0 0 0 4px #101010; }
+        .art-point h4 { margin: 0 0 4px; font-size: .88rem; }
+        .art-point p { margin: 0; color: #aaa7a0; font-size: .78rem; }
+        .art-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .art-gallery .media-card .image-box { min-height: 360px; }
+        .art-gallery .media-caption span { color: var(--art); }
+
+        /* Certificate */
+        .certificate { text-align: center; background: radial-gradient(circle at center, rgba(212,175,55,.08), transparent 40%), var(--bg); }
+        .certificate-symbol { display: block; color: var(--gold); font-size: 2.4rem; margin-bottom: 16px; }
+        .certificate-frame { max-width: 760px; margin: 48px auto 36px; padding: 10px; border: 1px solid rgba(212,175,55,.22); background: #050505; border-radius: 14px; box-shadow: var(--shadow); }
+        .certificate-frame img { width: 100%; height: auto; border-radius: 7px; }
+        .certificate-data { display: flex; justify-content: center; gap: 28px; align-items: stretch; }
+        .certificate-data > div { min-width: 110px; }
+        .certificate-data span { display: block; color: #77736c; font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+        .certificate-data strong { display: block; margin-top: 4px; font-family: "Playfair Display", serif; font-size: 1.05rem; font-weight: 500; }
+        .divider { width: 1px; background: var(--line); }
+
+        /* Footer */
+        .footer { padding: 42px 0; border-top: 1px solid var(--line); background: #050505; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; }
+        .footer-logo { color: var(--gold); font-family: "Playfair Display", serif; font-size: 1.65rem; letter-spacing: .14em; }
+        .copyright { margin: 5px 0 0; color: #77746e; font-size: .62rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+        .footer-links { display: flex; gap: 22px; }
+        .footer-links a { color: #c6c3bd; font-size: .66rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+        .footer-links a:hover { color: var(--gold-light); }
+
+        /* Dialog */
+        .modal[hidden] { display: none; }
+        .modal { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 22px; }
+        .modal-backdrop { position: absolute; inset: 0; background: rgba(4,4,4,.82); backdrop-filter: blur(10px); }
+        .modal-panel { position: relative; z-index: 1; width: min(100%, 650px); max-height: min(82vh, 720px); overflow: auto; padding: 34px; border: 1px solid rgba(212,175,55,.28); border-radius: 18px; background: #f7f4ee; color: #171717; box-shadow: 0 30px 90px rgba(0,0,0,.55); }
+        .modal-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border: 0; border-radius: 10px; background: #e8e3da; color: #555; cursor: pointer; font-size: 1.25rem; }
+        .modal-title { margin: 0 54px 6px 0; color: var(--gold-dark); font-family: "Playfair Display", serif; font-size: 1.65rem; font-weight: 600; }
+        .modal-subtitle { margin: 0 0 24px; padding-bottom: 16px; border-bottom: 1px solid #ded9cf; color: #77716a; font-size: .65rem; font-weight: 800; letter-spacing: .10em; text-transform: uppercase; }
+        .modal-content { margin: 0; color: #49443e; font-family: "Playfair Display", serif; font-size: 1.15rem; font-style: italic; line-height: 1.7; }
+
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+        .reveal.is-visible { opacity: 1; transform: none; }
+        .noscript-note { margin: 100px auto 20px; width: min(calc(100% - 40px), var(--container)); padding: 14px 18px; border: 1px solid #724; background: #241216; border-radius: 10px; }
+
+        @media (max-width: 980px) {
+            :root { --nav-height: 68px; }
+            .desktop-nav { display: none; }
+            .menu-toggle { display: block; }
+            .hero { min-height: auto; padding-top: calc(var(--nav-height) + 54px); }
+            .hero-grid { grid-template-columns: 1fr; gap: 58px; }
+            .hero-copy { order: 2; max-width: 760px; }
+            .portrait-wrap { order: 1; justify-self: center; width: min(74vw, 390px); }
+            .hero-badge { left: -24px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat:nth-child(2) { border-right: 0; }
+            .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+            .achievements-header { grid-template-columns: 1fr; }
+            .rating-card { min-width: 0; width: min(100%, 520px); }
+            .creative-grid, .art-grid { grid-template-columns: 1fr; }
+            .art-gallery .media-card .image-box { min-height: 420px; }
+        }
+
+        @media (max-width: 680px) {
+            .container { width: min(calc(100% - 28px), var(--container)); }
+            .section { padding: 78px 0; }
+            .brand { font-size: .82rem; letter-spacing: .10em; }
+            .hero { padding-bottom: 48px; }
+            .hero-title { font-size: clamp(3rem, 16vw, 4.7rem); }
+            .hero-text { font-size: .94rem; }
+            .hero-actions { display: grid; grid-template-columns: 1fr; }
+            .btn { width: 100%; }
+            .portrait-wrap { width: min(78vw, 330px); }
+            .portrait-outline { inset: 14px -14px -14px 14px; }
+            .hero-badge { left: -10px; bottom: 22px; min-width: 140px; }
+            .hero-badge strong { font-size: 1.8rem; }
+            .stats { padding-bottom: 55px; }
+            .stat { padding: 24px 18px; }
+            .achievement { grid-template-columns: 1fr auto; gap: 8px 14px; padding: 18px 6px; }
+            .achievement-date { grid-column: 1 / -1; }
+            .achievement-place { grid-column: 2; grid-row: 2; align-self: start; }
+            .achievement-main { grid-column: 1; grid-row: 2; }
+            .achievement-meta { line-height: 1.5; }
+            .rating { padding: 16px 10px; }
+            .rating strong { font-size: 1.55rem; }
+            .rating span { font-size: .5rem; letter-spacing: .08em; }
+            .code-card, .art-story { padding: 25px 22px; }
+            .media-card .image-box { min-height: 300px; }
+            .art-gallery { grid-template-columns: 1fr; }
+            .art-gallery .media-card .image-box { min-height: 360px; }
+            .art-story-top { flex-direction: column; }
+            .certificate-frame { margin-top: 34px; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .modal-panel { padding: 28px 22px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+            .reveal { opacity: 1; transform: none; }
+        }
+
+        @supports not (backdrop-filter: blur(10px)) {
+            .site-nav { background: rgba(8,8,8,.97); }
+        }
+    </style>
+
+    <meta name="google-site-verification" content="t10QosXSfP6Rt3NIsFHhNxI75VpvS8w44R5soxgcogg">
+    <script>document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Към основното съдържание</a>
+
+    <nav class="site-nav" aria-label="Основна навигация">
+        <div class="container nav-inner">
+            <a class="brand" href="#home" aria-label="Авигея Василева – начало">
+                <span class="brand-mark" aria-hidden="true">♛</span>
+                <span>AVIGEYA VASILEVA</span>
+            </a>
+
+            <div class="desktop-nav" aria-label="Секции">
+                <a href="#home" aria-current="true">Начало</a>
+                <a href="#stats">Статистика</a>
+                <a href="#achievements">Шах</a>
+                <a href="#creative">Код</a>
+                <a href="#art-cause">Изкуство</a>
+                <a href="#certificate">AFM</a>
             </div>
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-pearl focus:outline-none text-2xl" aria-label="Преплитане на менюто">☰</button>
-            <div class="hidden md:flex space-x-6 lg:space-x-8 text-[9px] lg:text-[10px] uppercase tracking-[0.2em] font-medium text-gray-100">
-                <a href="#home" class="hover:text-gold transition">Начало</a>
-                <a href="#stats" class="hover:text-gold transition">Статистика</a>
-                <a href="#achievements" class="hover:text-gold transition">Шах</a>
-                <a href="#creative" class="hover:text-gold transition">Код</a>
-                <a href="#art-cause" class="hover:text-gold transition">Изкуство</a>
-                <a href="#certificate" class="hover:text-gold transition">AFM</a>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-midnight/95 border-b border-white/10 px-6 py-4 flex flex-col space-y-4 text-xs uppercase tracking-widest">
-            <a href="#home" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="text-pearl hover:text-gold">Начало</a>
-            <a href="#stats" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="text-pearl hover:text-gold">Статистика</a>
-            <a href="#achievements" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="text-pearl hover:text-gold">Шах</a>
-            <a href="#creative" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="text-pearl hover:text-gold">Код</a>
-            <a href="#art-cause" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="text-pearl hover:text-gold">Изкуство</a>
-            <a href="#certificate" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="text-pearl hover:text-gold">AFM</a>
+
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Отвори менюто" aria-expanded="false" aria-controls="mobile-menu">
+                <span aria-hidden="true"></span>
+            </button>
         </div>
     </nav>
 
-    <header id="home" class="relative min-h-screen flex items-center premium-bg pt-24 md:pt-20">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-midnight"></div>
-        <div class="container mx-auto px-6 lg:px-12 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-                <div class="order-2 lg:order-1 max-w-2xl fade-in-up">
-                    <p class="text-gold tracking-[0.3em] uppercase text-[10px] md:text-xs font-semibold mb-4 md:mb-6 flex items-center gap-4">
-                        <span class="w-8 md:w-12 h-px bg-gold"></span>
-                        Arena FIDE Master
+    <div class="mobile-nav" id="mobile-menu" aria-label="Мобилна навигация">
+        <a href="#home">Начало</a>
+        <a href="#stats">Статистика</a>
+        <a href="#achievements">Шах</a>
+        <a href="#creative">Код</a>
+        <a href="#art-cause">Изкуство</a>
+        <a href="#certificate">AFM</a>
+    </div>
+
+    <noscript><div class="noscript-note">За динамичната статистика и списъка с турнири е необходимо JavaScript да бъде включен.</div></noscript>
+
+    <main id="main">
+        <header class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Arena FIDE Master</p>
+                    <h1 class="hero-title">Стратегия.<br><em>Интелект.</em><br>Победа.</h1>
+                    <p class="hero-text">
+                        Авигея Василева е сред ярките млади надежди на родния шахмат. Тя тренира и се състезава за ШК „Великова“ в София, където развива своя стратегически усет. С впечатляваща колекция от отличия Авигея доказва, че високите върхове се покоряват с талант, дисциплина и упорит труд.
                     </p>
-                    <h1 class="text-5xl md:text-8xl font-serif font-medium leading-[1.1] mb-6 md:mb-8 text-pearl">
-                        Стратегия.<br>
-                        <span class="italic text-gray-100 font-light">Интелект.</span><br>
-                        Победа.
-                    </h1>
-                    <p class="text-gray-100 font-light text-base md:text-xl leading-relaxed mb-8 md:mb-12 max-w-lg">
-                        Авигея Василева е сред ярките млади надежди на родния шахмат. Тя тренира и се състезава за ШК „Великова“ в град София, където непрекъснато развива и усъвършенства своя стратегически усет. С впечатляваща колекция от над 38 престижни награди, Авигея ежедневно доказва, че високите върхове се покоряват с безспорен талант и много упорит труд. За нея шахматната дъска не е просто поле за битка, а платно, на което превръща всяка изиграна партия в изкуство.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
-                        <a href="#achievements" class="inline-block px-8 md:px-10 py-4 border border-gold text-gold hover:bg-gold hover:text-midnight transition duration-300 tracking-[0.1em] uppercase text-xs md:text-sm text-center">
-                            История на успехите
-                        </a>
-                        <a href="https://www.instagram.com/avigeav" target="_blank" class="flex items-center justify-center gap-3 px-8 md:px-10 py-4 border border-white/20 text-pearl hover:border-gold transition duration-300 tracking-[0.1em] uppercase text-xs md:text-sm group">
-                            <svg class="w-4 h-4 md:w-5 md:h-5 group-hover:text-gold transition" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                            Instagram
-                        </a>                    </div>                </div>                <div class="order-1 lg:order-2 flex justify-center lg:justify-end fade-in-up delay-200 relative px-4 md:px-0">                    <div class="absolute inset-0 border border-white/10 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8 pointer-events-none"></div>                    <div class="relative w-64 h-[400px] md:w-96 md:h-[600px] overflow-hidden rounded-sm ring-1 ring-white/10">                        <div class="absolute inset-0 bg-midnight mix-blend-overlay z-10 opacity-10 hover:opacity-0 transition duration-700"></div>                        <img src="avigea.jpg" alt="Авигея Василева с купи и медали" class="w-full h-full object-cover object-center transition duration-700 scale-105 hover:scale-100" onerror="this.parentElement.innerHTML='<div class=\'img-fallback w-full h-full text-white\'><div class=\'space-y-4\'><span class=\'text-gold text-4xl\'>♛</span><p class=\'text-[10px] uppercase tracking-[0.2em] opacity-40\'>Портретът не е наличен</p></div></div>'">                    </div>                </div>            </div>        </div>    </header>
+                    <div class="hero-actions">
+                        <a class="btn btn--gold" href="#achievements">История на успехите</a>
+                        <a class="btn" href="https://ratings.fide.com/profile/2961547" target="_blank" rel="noopener noreferrer">FIDE профил ↗</a>
+                        <a class="btn" href="https://www.instagram.com/avigeav" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+                    </div>
+                </div>
 
-    <section id="stats" class="py-16 md:py-24 bg-midnight border-t border-white/10 relative z-20">        <div class="container mx-auto px-6 lg:px-12">            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center md:text-left divide-x-0 md:divide-x md:divide-white/10">                <div class="fade-in-up">                    <div id="count-gold" class="text-4xl md:text-7xl font-serif text-gold mb-2 md:mb-4 font-light">0</div>                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-100">Златни медала</div>                </div>                <div class="md:px-8 fade-in-up delay-100">                    <div id="count-silver" class="text-4xl md:text-7xl font-serif text-pearl mb-2 md:mb-4 font-light">0</div>                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-100">Сребърни медала</div>                </div>                <div class="md:px-8 fade-in-up delay-200">                    <div id="count-bronze" class="text-4xl md:text-7xl font-serif text-amber-700 mb-2 md:mb-4 font-light">0</div>                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-100">Бронзови медала</div>                </div>                <div class="md:px-8 fade-in-up delay-300">                    <div id="count-total" class="text-4xl md:text-7xl font-serif text-gray-300 mb-2 md:mb-4 font-light">0</div>                    <div class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-100">Общо отличия</div>                </div>            </div>        </div>    </section>
+                <div class="portrait-wrap reveal">
+                    <div class="portrait-outline" aria-hidden="true"></div>
+                    <div class="portrait-frame">
+                        <img src="avigea.jpg" alt="Авигея Василева с купи и медали" fetchpriority="high" decoding="async">
+                    </div>
+                    <div class="hero-badge" aria-label="Общо отличия">
+                        <strong id="hero-total">44</strong>
+                        <span>отличия в турнири</span>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    <section id="achievements" class="py-20 md:py-32 bg-pearl text-midnight selection:bg-midnight selection:text-gold">        <div class="container mx-auto px-6 lg:px-12 max-w-6xl">            <div class="mb-12 md:mb-20">                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-6">                    <div>                        <p class="text-gold tracking-[0.3em] uppercase text-[10px] md:text-xs font-semibold mb-4 flex items-center gap-4"><span class="w-8 h-px bg-gold"></span>Авигея Василева</p>                        <h2 class="text-4xl md:text-5xl font-serif mb-4 md:mb-6">Хроника на<br><span class="italic text-gold">Постиженията</span></h2>                        <p class="text-gray-700 max-w-xl font-light text-sm md:text-base leading-relaxed">Детайлен преглед на завоюваните върхове в кариерата на Авигея Василева.</p>                    </div>                                        <div class="relative group w-full md:w-auto">                        <div class="bg-midnight border border-white/20 shadow-2xl flex justify-around md:justify-start gap-4 md:gap-8 text-center p-5 md:p-8 rounded-sm">                            <div>                                <div id="rate-std" class="text-2xl md:text-3xl font-serif text-pearl">1561</div>                                <div class="text-[9px] text-gold uppercase tracking-widest mt-2">Standard</div>                            </div>                            <div class="w-px bg-white/20"></div>                            <div>                                <div id="rate-rap" class="text-2xl md:text-3xl font-serif text-pearl">1483</div>                                <div class="text-[9px] text-gold uppercase tracking-widest mt-2">Rapid</div>                            </div>                            <div class="w-px bg-white/20"></div>                            <div>                                <div id="rate-blz" class="text-2xl md:text-3xl font-serif text-pearl">1526</div>                                <div class="text-[9px] text-gold uppercase tracking-widest mt-2">Blitz</div>                            </div>                        </div>                    </div>                </div>            </div>                        <div class="flex space-x-6 md:space-x-12 border-b border-gray-200 mb-8 md:mb-12 overflow-x-auto no-scrollbar font-medium">                <button onclick="switchTab('dip')" id="tab-dip" class="tab-btn tab-active pb-4 text-[10px] md:text-sm uppercase tracking-[0.15em] whitespace-nowrap">Държавни първенства</button>                <button onclick="switchTab('others')" id="tab-others" class="tab-btn pb-4 text-[10px] md:text-sm uppercase tracking-[0.15em] whitespace-nowrap">Други турнири</button>            </div>
-            <div id="list-dip" class="fade-in-up">                <div id="dip-container"></div>            </div>            <div id="list-others" class="hidden fade-in-up">                <div id="others-container"></div>            </div>        </div>    </section>
+        <section class="stats" id="stats" aria-labelledby="stats-title">
+            <h2 id="stats-title" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Статистика на отличията</h2>
+            <div class="container">
+                <div class="stats-grid reveal">
+                    <div class="stat stat--gold"><strong class="stat-value" id="count-gold">0</strong><span class="stat-label">Златни медала</span></div>
+                    <div class="stat stat--silver"><strong class="stat-value" id="count-silver">0</strong><span class="stat-label">Сребърни медала</span></div>
+                    <div class="stat stat--bronze"><strong class="stat-value" id="count-bronze">0</strong><span class="stat-label">Бронзови медала</span></div>
+                    <div class="stat"><strong class="stat-value" id="count-total">0</strong><span class="stat-label">Общо отличия</span></div>
+                </div>
+            </div>
+        </section>
 
-    <section id="creative" class="py-20 md:py-32 bg-midnight relative z-10 border-t border-white/10 overflow-hidden">        <div class="absolute top-0 right-0 w-64 h-64 bg-code/10 blur-[120px] pointer-events-none"></div>        <div class="container mx-auto px-6 lg:px-12">            <div class="max-w-5xl mx-auto">                <p class="text-code tracking-[0.3em] uppercase text-[10px] md:text-xs font-semibold mb-4 flex items-center gap-4"><span class="w-8 h-px bg-code"></span>Отвъд шахмата</p>                <h2 class="text-4xl md:text-5xl font-serif mb-12 text-pearl">Творческият <span class="italic text-code font-light">Код</span></h2>                                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">                    <div class="lg:col-span-3 space-y-10">                        <div class="code-card p-6 md:p-8 rounded-lg relative overflow-hidden">                            <h3 class="text-2xl font-serif text-pearl mb-6 flex items-center gap-3">👩‍💻 Scratch & Анимация</h3>                            <p class="text-gray-100 font-light leading-relaxed mb-10 text-sm md:text-base">Програмирането за мен е начин да вдъхна живот на идеите си. Пътят до националния успех беше изпълнен с много креативност.</p>                                                        <div class="space-y-8">                                <div class="step-node flex gap-6 pb-2">                                    <div class="w-6 h-6 shrink-0 bg-code rounded-full flex items-center justify-center text-midnight text-[10px] font-bold z-10 shadow-[0_0_10px_rgba(100,255,218,0.5)]">1</div>                                    <div>                                        <h4 class="text-pearl font-medium text-sm">Общински & Областен кръг • София</h4>                                        <p class="text-gray-200 text-xs mt-1 leading-relaxed">Класирана в топ 6 сред над 150 деца от София.</p>                                    </div>                                </div>                                <div class="step-node flex gap-6 pb-2">                                    <div class="w-6 h-6 shrink-0 bg-code rounded-full flex items-center justify-center text-midnight text-[10px] font-bold z-10 shadow-[0_0_10px_rgba(100,255,218,0.5)]">2</div>                                    <div>                                        <h4 class="text-pearl font-medium text-sm">Национален финал по компютърно моделиране • Шумен</h4>                                        <p class="text-gray-200 text-xs mt-1 leading-relaxed">14-15.03.2026 в СУ „Сава Доброплодни“ 7-ма от 54 финалисти.</p>                                    </div>                                </div>                                <div class="step-node flex gap-6">                                    <div class="w-6 h-6 shrink-0 bg-code rounded-full flex items-center justify-center text-midnight text-[10px] font-bold z-10 shadow-[0_0_10px_rgba(100,255,218,0.5)]">3</div>                                    <div>                                        <h4 class="text-pearl font-medium text-sm">Финално класиране</h4>                                        <p class="text-gray-200 text-xs mt-1 italic leading-relaxed">7-мо място и Грамота за Оригинално представена анимация на национален кръг.</p>                                    </div>                                </div>                            </div>                        </div>                    </div>                    <div class="lg:col-span-2">                        <div class="relative group h-full">                            <div class="absolute -inset-1 bg-code/20 blur opacity-40 group-hover:opacity-60 transition duration-500"></div>                            <div class="relative bg-midnight border border-white/10 p-2 shadow-2xl rounded-sm overflow-hidden h-full flex flex-col">                                <img src="gramota.webp" alt="Грамота за оригинална анимация" class="w-full h-auto object-contain flex-1 bg-white">                                <div class="p-3 bg-midnight/90 text-center border-t border-white/10">                                    <h5 class="text-pearl font-serif text-sm">Грамота Scratch</h5>                                    <p class="text-[8px] text-code uppercase tracking-widest mt-1">Шумен 2026</p>                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </section>
+        <section class="section section--light" id="achievements" aria-labelledby="achievements-title">
+            <div class="container">
+                <div class="achievements-header reveal">
+                    <div>
+                        <p class="eyebrow">Авигея Василева</p>
+                        <h2 class="section-title" id="achievements-title">Хроника на<br><em>постиженията</em></h2>
+                        <p class="section-intro">Детайлен преглед на завоюваните отличия в кариерата на Авигея Василева. Изберете турнир за кратък обзор.</p>
+                    </div>
 
-    <section id="art-cause" class="py-20 md:py-32 bg-midnight relative z-10 border-t border-white/10 overflow-hidden">        <div class="absolute top-0 left-0 w-64 h-64 bg-art/10 blur-[120px] pointer-events-none"></div>        <div class="container mx-auto px-6 lg:px-12">            <div class="max-w-6xl mx-auto">                <p class="text-art tracking-[0.3em] uppercase text-[10px] md:text-xs font-semibold mb-4 flex items-center gap-4"><span class="w-8 h-px bg-art"></span>Обществена ангажираност</p>                <h2 class="text-4xl md:text-5xl font-serif mb-12 text-pearl text-center lg:text-left">Изкуство с <span class="italic text-art font-light">Кауза</span></h2>                                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">                    <div class="lg:col-span-6">                        <div class="art-card p-6 md:p-10 rounded-lg h-full border border-art/20">                            <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">                                <h3 class="text-2xl font-serif text-pearl leading-tight">„Не преминавайте<br>през децата ни“</h3>                                <span class="bg-art/20 text-art text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-widest border border-art/30 whitespace-nowrap">III място</span>                            </div>                                                        <p class="text-gray-100 font-light leading-relaxed mb-8 text-sm md:text-base">Кампания на Столична община. В конкуренция с над <strong class="text-art">600 рисунки</strong>, творбата на Авигея беше отличена от професионално жури.</p>                                                        <div class="space-y-6 border-l border-art/20 pl-6 relative">                                <div class="relative">                                    <div class="absolute -left-[31px] top-1 w-2.5 h-2.5 rounded-full bg-art border-2 border-midnight"></div>                                    <h4 class="text-pearl font-medium text-sm">Флашмоб & „Пим Пам“</h4>                                    <p class="text-gray-300 text-xs mt-1 leading-relaxed">18 ноември 2023 г., Софийски университет. Музика и изкуство в подкрепа #'на пътната безопасност.</p>                                </div>                                <div class="relative">                                    <div class="absolute -left-[31px] top-1 w-2.5 h-2.5 rounded-full bg-art border-2 border-midnight"></div>                                    <h4 class="text-pearl font-medium text-sm">Награда от НХА</h4>                                    <p class="text-gray-300 text-xs mt-1 leading-relaxed">Церемония в галерията на Националната художествена академия.</p>                                </div>                                <div class="relative">                                    <div class="absolute -left-[31px] top-1 w-2.5 h-2.5 rounded-full bg-art border-2 border-midnight shadow-[0_0_10px_#ff7043]"></div>                                    <h4 class="text-pearl font-medium text-sm">Линия № 280</h4>                                    <p class="text-gray-300 text-xs mt-1 leading-relaxed">Рисунката е избрана за брандиране на автобус от софийския градски транспорт.</p>                                </div>                            </div>                        </div>                    </div>                                        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">                        <div class="flex flex-col h-full">                            <div class="relative group flex-1">                                <div class="absolute -inset-1 bg-art/20 blur opacity-40 group-hover:opacity-60 transition duration-500"></div>                                <div class="relative h-full bg-midnight border border-white/10 p-2 shadow-2xl rounded-sm overflow-hidden flex flex-col">                                    <img src="gramota_1.webp" alt="Грамота за III място рисунка" class="w-full h-auto object-contain flex-1 bg-white">                                    <div class="p-3 bg-midnight/90 text-center border-t border-white/10">                                        <h5 class="text-pearl font-serif text-sm">Грамота Рисунка</h5>                                        <p class="text-[8px] text-art uppercase tracking-widest mt-1">III място в София</p>                                    </div>                                </div>                            </div>                        </div>                        <div class="flex flex-col h-full">                            <div class="relative group flex-1">                                <div class="absolute -inset-1 bg-art/20 blur opacity-40 group-hover:opacity-60 transition duration-500"></div>                                <div class="relative h-full bg-midnight border border-white/10 p-2 shadow-2xl rounded-sm overflow-hidden flex flex-col">                                    <img src="bus.webp" alt="Брандиран автобус с рисунка на Авигея" class="w-full h-auto object-cover flex-1">                                    <div class="p-3 bg-midnight/90 text-center border-t border-white/10">                                        <h5 class="text-pearl font-serif text-sm">Автобус № 2302</h5>                                        <p class="text-[8px] text-art uppercase tracking-widest mt-1">Линия 280 • София</p>                                    </div>                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </section>
+                    <div class="rating-card" aria-label="FIDE рейтинги за септември 2026">
+                        <div class="rating"><strong>1537</strong><span>Standard</span></div>
+                        <div class="rating"><strong>1651</strong><span>Rapid</span></div>
+                        <div class="rating"><strong>1554</strong><span>Blitz</span></div>
+                    </div>
+                    <p style="margin-top:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#777">FIDE рейтинг • септември 2026</p>
+                </div>
 
-    <section id="certificate" class="py-20 md:py-32 bg-midnight relative overflow-hidden border-t border-white/10">        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-3xl bg-gold/5 blur-[100px] pointer-events-none rounded-full"></div>        <div class="container mx-auto px-6 lg:px-12 relative z-10 text-center">            <span class="text-gold text-3xl md:text-4xl mb-6 inline-block">♛</span>            <h2 class="text-3xl md:text-5xl font-serif mb-6 text-pearl leading-tight">Официално Признание</h2>            <div class="relative group w-full max-w-2xl mx-auto mb-16">                <div class="absolute -inset-2 md:-inset-8 bg-white/5 border border-white/10 rounded-sm"></div>                <div class="relative bg-[#050505] p-2 border border-white/20 shadow-2xl z-10">                    <img src="title_certificate_888098_AFM.png" alt="FIDE Certificate AFM" class="w-full h-auto grayscale-[10%] opacity-90 mx-auto" onerror="this.parentElement.innerHTML='<div class=\'aspect-[1.4] flex flex-col items-center justify-center p-6 md:p-12 border-white/10 bg-white/5\'><h3 class=\'font-serif text-xl text-pearl\'>Arena FIDE Master</h3><p class=\'text-[10px] uppercase tracking-widest text-gray-300 mt-2\'>Certificate #888098</p></div>'">                </div>            </div>            <div class="flex justify-center gap-6 md:gap-8 text-[10px] md:text-sm uppercase tracking-widest text-gray-300 font-medium">                <div><span class="block text-gray-400 mb-1">FIDE ID</span><span class="text-pearl">2961547</span></div>                <div class="w-px h-8 bg-white/10"></div>                <div><span class="block text-gray-400 mb-1">CERT NO</span><span class="text-pearl">888098</span></div>            </div>        </div>    </section>
+                <div class="tabs reveal" role="tablist" aria-label="Категории турнири">
+                    <button class="tab" id="tab-dip" role="tab" type="button" aria-selected="true" aria-controls="panel-dip" data-tab="dip">Държавни първенства</button>
+                    <button class="tab" id="tab-others" role="tab" type="button" aria-selected="false" aria-controls="panel-others" data-tab="others">Други турнири</button>
+                </div>
 
-    <footer class="bg-[#050505] py-12 border-t border-white/10">        <div class="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">            <div>                <div class="text-gold font-serif text-2xl tracking-widest mb-2">A.V.</div>                <p class="text-gray-400 text-[10px] uppercase tracking-widest font-medium">© 2026 Авигея Василева</p>            </div>            <div class="flex gap-6">                <a href="https://ratings.fide.com/profile/2961547" target="_blank" class="text-[10px] text-gray-200 hover:text-gold transition uppercase tracking-widest font-bold">FIDE ↗</a>                <a href="https://www.instagram.com/avigeav" target="_blank" class="text-[10px] text-gray-200 hover:text-gold transition uppercase tracking-widest font-bold">Instagram ↗</a>            </div>        </div>    </footer>
+                <div id="panel-dip" role="tabpanel" aria-labelledby="tab-dip">
+                    <div class="achievement-list" id="dip-container"></div>
+                </div>
+                <div id="panel-others" role="tabpanel" aria-labelledby="tab-others" hidden>
+                    <div class="achievement-list" id="others-container"></div>
+                </div>
+            </div>
+        </section>
 
-    <div id="ai-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-midnight/95 backdrop-blur-sm px-4">        <div class="bg-pearl text-midnight p-6 md:p-12 max-w-2xl w-full relative border border-gold/30">            <button onclick="closeModal()" class="absolute top-4 right-6 text-2xl text-gray-400 hover:text-midnight transition">✕</button>            <h3 id="ai-modal-title" class="text-xl md:text-2xl font-serif text-gold-dark mb-2"></h3>
-            <p id="ai-modal-subtitle" class="text-[10px] uppercase tracking-widest text-gray-500 mb-6 border-b pb-4 font-bold"></p>
-            <div id="ai-modal-content" class="text-base md:text-lg italic font-serif leading-relaxed text-gray-800"></div>
+        <section class="section" id="creative" aria-labelledby="creative-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="eyebrow" style="color:var(--code)">Отвъд шахмата</p>
+                    <h2 class="section-title" id="creative-title">Творческият <em style="color:var(--code)">код</em></h2>
+                </div>
+
+                <div class="creative-grid">
+                    <article class="card code-card reveal">
+                        <h3 class="card-title">👩‍💻 Scratch &amp; Анимация</h3>
+                        <p class="card-copy">Програмирането за мен е начин да вдъхна живот на идеите си. Пътят до националния успех беше изпълнен с много креативност.</p>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-no">1</div>
+                                <div><h4>Общински &amp; Областен кръг • София</h4><p>Класирана в топ 6 сред над 150 деца от София.</p></div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-no">2</div>
+                                <div><h4>Национален финал по компютърно моделиране • Шумен</h4><p>14–15.03.2026 в СУ „Сава Доброплодни“ – 7-ма от 54 финалисти.</p></div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-no">3</div>
+                                <div><h4>Финално класиране</h4><p>7-мо място и грамота за оригинално представена анимация на национален кръг.</p></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <figure class="card media-card reveal">
+                        <div class="image-box"><img src="gramota.webp" alt="Грамота за оригинална анимация" loading="lazy" decoding="async"></div>
+                        <figcaption class="media-caption"><strong>Грамота Scratch</strong><span>Шумен 2026</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="art-cause" aria-labelledby="art-title">
+            <div class="container">
+                <div class="art-heading reveal">
+                    <p class="eyebrow">Обществена ангажираност</p>
+                    <h2 class="section-title" id="art-title">Изкуство с <em>кауза</em></h2>
+                </div>
+
+                <div class="art-grid">
+                    <article class="card art-story reveal">
+                        <div class="art-story-top">
+                            <h3 class="card-title">„Не преминавайте<br>през децата ни“</h3>
+                            <span class="pill">III място</span>
+                        </div>
+                        <p class="card-copy">Кампания на Столична община. В конкуренция с над <strong>600 рисунки</strong>, творбата на Авигея беше отличена от професионално жури.</p>
+                        <div class="art-points">
+                            <div class="art-point"><h4>Флашмоб &amp; „Пим Пам“</h4><p>18 ноември 2023 г., Софийски университет. Музика и изкуство в подкрепа на пътната безопасност.</p></div>
+                            <div class="art-point"><h4>Награда от НХА</h4><p>Церемония в галерията на Националната художествена академия.</p></div>
+                            <div class="art-point"><h4>Линия № 280</h4><p>Рисунката е избрана за брандиране на автобус от софийския градски транспорт.</p></div>
+                        </div>
+                    </article>
+
+                    <div class="art-gallery">
+                        <figure class="card media-card reveal">
+                            <div class="image-box"><img src="gramota_1.webp" alt="Грамота за III място за рисунка" loading="lazy" decoding="async"></div>
+                            <figcaption class="media-caption"><strong>Грамота Рисунка</strong><span>III място в София</span></figcaption>
+                        </figure>
+                        <figure class="card media-card reveal">
+                            <div class="image-box"><img src="bus.webp" alt="Брандиран автобус с рисунка на Авигея" loading="lazy" decoding="async"></div>
+                            <figcaption class="media-caption"><strong>Автобус № 2302</strong><span>Линия 280 • София</span></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section certificate" id="certificate" aria-labelledby="certificate-title">
+            <div class="container reveal">
+                <span class="certificate-symbol" aria-hidden="true">♛</span>
+                <p class="eyebrow" style="justify-content:center">Arena FIDE Master</p>
+                <h2 class="section-title" id="certificate-title">Официално признание</h2>
+                <div class="certificate-frame">
+                    <img src="title_certificate_888098_AFM.png" alt="Сертификат Arena FIDE Master" loading="lazy" decoding="async">
+                </div>
+                <div class="certificate-data" aria-label="Идентификатори">
+                    <div><span>FIDE ID</span><strong>2961547</strong></div>
+                    <div class="divider" aria-hidden="true"></div>
+                    <div><span>Cert No.</span><strong>888098</strong></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div><div class="footer-logo">A.V.</div><p class="copyright">© <span id="year">2026</span> Авигея Василева</p></div>
+            <div class="footer-links">
+                <a href="https://ratings.fide.com/profile/2961547" target="_blank" rel="noopener noreferrer">FIDE ↗</a>
+                <a href="https://worldchess.com/profile/888098" target="_blank" rel="noopener noreferrer">World Chess ↗</a>
+                <a href="https://www.instagram.com/avigeav" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="achievement-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-content" hidden>
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-panel" tabindex="-1">
+            <button class="modal-close" type="button" aria-label="Затвори" data-close-modal>×</button>
+            <h3 class="modal-title" id="modal-title"></h3>
+            <p class="modal-subtitle" id="modal-subtitle"></p>
+            <p class="modal-content" id="modal-content"></p>
         </div>
     </div>
 
     <script>
-        const dipData = [
+const dipData = [
             { date: "02-04 Март 2026", title: "ДИП по ускорен шахмат", details: "I категория момичета до 12г. • Пловдив", place: "II място" },
             { date: "02-04 Март 2026", title: "ДИП по блиц шахмат", details: "I категория момичета до 12г. • Пловдив", place: "II място" },
             { date: "21-26 Окт 2025", title: "ДИП по ускорен шахмат", details: "девойки до 20г. • Перник", place: "II място" },
@@ -207,7 +630,7 @@
             { date: "01-06 Окт 2024", title: "Държавен отборен шампионат (класически)", details: "I категория момичета до 10г. • Боровец", place: "III място" }
         ];
 
-        const othersData = [
+const othersData = [
             { date: "22.08.2026", title: "Купа Рила - ускорен шах ", details: "I категория момичета до 12 години • Дупница", place: "I място" },
             { date: "22.08.2026", title: "Купа Рила - блиц шах ", details: "I категория момичета до 16 години • Дупница", place: "II място" },
             { date: "09-16.08.2026", title: "48th OPEN, G. TRINGOV MEMORIAL, Group B ", details: "I категория момичета до 12 години • Пловдив", place: "III място" },
@@ -244,95 +667,176 @@
             { date: "24.02.2024", title: "Купа „Милениум“", details: "I категория момичета до 14г. • София", place: "III място" }
         ];
 
-        function switchTab(tab) {
-            document.getElementById('list-dip').classList.toggle('hidden', tab !== 'dip');
-            document.getElementById('list-others').classList.toggle('hidden', tab !== 'others');
-            document.getElementById('tab-dip').classList.toggle('tab-active', tab === 'dip');
-            document.getElementById('tab-others').classList.toggle('tab-active', tab === 'others');
-        }
+        const els = {
+            menuToggle: document.getElementById('menu-toggle'),
+            mobileMenu: document.getElementById('mobile-menu'),
+            modal: document.getElementById('achievement-modal'),
+            modalPanel: document.querySelector('#achievement-modal .modal-panel'),
+            modalTitle: document.getElementById('modal-title'),
+            modalSubtitle: document.getElementById('modal-subtitle'),
+            modalContent: document.getElementById('modal-content')
+        };
 
-        function closeModal() { document.getElementById('ai-modal').classList.add('hidden'); }
+        let lastFocusedElement = null;
 
-        // Ново интелигентно и сигурно решение за анализ, което не изисква API ключове
-        function analyzeSingleTournament(title, place, details, date) {
-            document.getElementById('ai-modal').classList.remove('hidden');
-            document.getElementById('ai-modal-title').innerText = title;
-            document.getElementById('ai-modal-subtitle').innerText = `${place} | ${date}`;
-            
+        function medalType(place) {
             const p = place.toLowerCase().trim();
-            let почетна_позиция = "отлично класиране";
-            if (p.includes('i място') || p.includes('1 място')) почетна_позиция = "блестящото първо място и златния медал";
-            else if (p.includes('ii място') || p.includes('2 място')) почетна_позиция = "забележителното второ място и сребърния медал";
-            else if (p.includes('iii място') || p.includes('3 място')) почетна_позиция = "престижното трето място и бронзовото отличие";
-
-            const изречение1 = `Успехът на Авигея Василева в надпреварата "${title}" е резултат от нейния изключителен стратегически нюх и висока спортна дисциплина.`;
-            const изречение2 = `Завоюването на ${почетна_позиция} в силно конкурентната група (${details}) за пореден път затвърждава статута ѝ на една от водещите млади надежди в българския шахмат.`;
-            
-            document.getElementById('ai-modal-content').innerText = `${изречение1} ${изречение2}`;
-        }
-
-        function updateStats() {
-            const all = [...dipData, ...othersData];
-            let gold = 0, silver = 0, bronze = 0;
-            all.forEach(item => {
-                const p = item.place.toLowerCase().trim();
-                if (p === 'i място' || p === '1 място') gold++;
-                else if (p === 'ii място' || p === '2 място') silver++;
-                else if (p === 'iii място' || p === '3 място') bronze++;
-            });
-            document.getElementById('count-gold').innerText = gold;
-            document.getElementById('count-silver').innerText = silver;
-            document.getElementById('count-bronze').innerText = bronze;
-            document.getElementById('count-total').innerText = all.length;
+            if (p === 'i място' || p === '1 място') return 'gold';
+            if (p === 'ii място' || p === '2 място') return 'silver';
+            if (p === 'iii място' || p === '3 място') return 'bronze';
+            return 'other';
         }
 
         function renderList(data, containerId) {
             const container = document.getElementById(containerId);
-            let htmlContent = '';
-            data.forEach(item => {
-                const p = item.place.toLowerCase().trim();
-                const isGold = (p === 'i място' || p === '1 място');
-                const isSilver = (p === 'ii място' || p === '2 място');
-                const isBronze = (p === 'iii място' || p === '3 място');
-                                
-                let titleColor = "text-midnight";
-                let labelColor = "text-gray-600";
-                let trophyColor = "text-gray-400";
+            const fragment = document.createDocumentFragment();
 
-                if (isGold) {
-                    titleColor = "text-gold-dark";
-                    labelColor = "text-gold-dark/70";
-                    trophyColor = "text-[#D4AF37]";
-                } else if (isSilver) {
-                    titleColor = "text-slate-600";
-                    labelColor = "text-slate-500";
-                    trophyColor = "text-[#94a3b8]";
-                } else if (isBronze) {
-                    titleColor = "text-orange-900";
-                    labelColor = "text-orange-800/70";
-                    trophyColor = "text-[#b45309]";
-                }                                
-                htmlContent += `
-                <div class="flex flex-col md:flex-row md:items-center py-4 md:py-6 border-b border-gray-100 achievement-row group px-2" onclick="analyzeSingleTournament('${item.title}', '${item.place}', '${item.details}', '${item.date}')">
-                    <div class="w-full md:w-1/4 mb-1 md:mb-0 text-[10px] md:text-sm text-gray-500 font-bold uppercase tracking-tighter">${item.date}</div>
-                    <div class="w-full md:w-1/2">
-                        <h3 class="font-serif text-lg md:text-xl font-semibold ${titleColor}">${item.title}</h3>
-                        <p class="text-[10px] ${labelColor} mt-1 uppercase tracking-widest font-bold">${item.details}</p>
-                    </div>
-                    <div class="w-full md:w-1/4 text-left md:text-right flex items-center md:justify-end mt-2 md:mt-0 font-bold text-sm md:text-base ${titleColor}">
-                        <svg class="w-4 h-4 md:w-5 md:h-5 mr-2 ${trophyColor}" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0-11a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/><path d="M8 13.5l-2.5 9.5 6.5-3.5 6.5 3.5-2.5-9.5a8.9 8.9 0 0 1-8 0z"/></svg>
-                        ${item.place}
-                    </div>
-                </div>`;
+            data.forEach(item => {
+                const type = medalType(item.place);
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = `achievement is-${type}`;
+                button.setAttribute('aria-label', `${item.title}, ${item.place}, ${item.date}. Отвори подробности.`);
+
+                const date = document.createElement('span');
+                date.className = 'achievement-date';
+                date.textContent = item.date;
+
+                const main = document.createElement('span');
+                main.className = 'achievement-main';
+                const title = document.createElement('span');
+                title.className = 'achievement-title';
+                title.textContent = item.title;
+                const meta = document.createElement('span');
+                meta.className = 'achievement-meta';
+                meta.textContent = item.details;
+                main.append(title, meta);
+
+                const place = document.createElement('span');
+                place.className = 'achievement-place';
+                const dot = document.createElement('span');
+                dot.className = 'medal-dot';
+                dot.setAttribute('aria-hidden', 'true');
+                const placeText = document.createElement('span');
+                placeText.textContent = item.place;
+                place.append(dot, placeText);
+
+                button.append(date, main, place);
+                button.addEventListener('click', () => openAchievement(item));
+                fragment.appendChild(button);
             });
-            container.innerHTML = htmlContent;
+
+            container.replaceChildren(fragment);
         }
 
-        window.onload = function() {
-            renderList(dipData, 'dip-container');
-            renderList(othersData, 'others-container');
-            updateStats();
-        };
+        function updateStats() {
+            const all = [...dipData, ...othersData];
+            const counts = { gold: 0, silver: 0, bronze: 0 };
+            all.forEach(item => {
+                const type = medalType(item.place);
+                if (counts[type] !== undefined) counts[type]++;
+            });
+
+            document.getElementById('count-gold').textContent = counts.gold;
+            document.getElementById('count-silver').textContent = counts.silver;
+            document.getElementById('count-bronze').textContent = counts.bronze;
+            document.getElementById('count-total').textContent = all.length;
+            document.getElementById('hero-total').textContent = all.length;
+        }
+
+        function openAchievement(item) {
+            lastFocusedElement = document.activeElement;
+            const type = medalType(item.place);
+            const positionText = {
+                gold: 'първото място и златния медал',
+                silver: 'второто място и сребърния медал',
+                bronze: 'третото място и бронзовото отличие',
+                other: 'отличното класиране'
+            }[type];
+
+            els.modalTitle.textContent = item.title;
+            els.modalSubtitle.textContent = `${item.place} • ${item.date}`;
+            els.modalContent.textContent = `Участието на Авигея Василева в „${item.title}“ завършва с ${positionText}. Категория: ${item.details}.`;
+            els.modal.hidden = false;
+            document.body.classList.add('modal-open');
+            requestAnimationFrame(() => els.modalPanel.focus());
+        }
+
+        function closeModal() {
+            if (els.modal.hidden) return;
+            els.modal.hidden = true;
+            document.body.classList.remove('modal-open');
+            lastFocusedElement?.focus();
+        }
+
+        function activateTab(tabName, moveFocus = false) {
+            document.querySelectorAll('[role="tab"]').forEach(tab => {
+                const isActive = tab.dataset.tab === tabName;
+                tab.setAttribute('aria-selected', String(isActive));
+                tab.tabIndex = isActive ? 0 : -1;
+                if (isActive && moveFocus) tab.focus();
+            });
+            document.getElementById('panel-dip').hidden = tabName !== 'dip';
+            document.getElementById('panel-others').hidden = tabName !== 'others';
+        }
+
+        document.querySelectorAll('[role="tab"]').forEach(tab => {
+            tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+            tab.addEventListener('keydown', event => {
+                if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+                event.preventDefault();
+                const next = tab.dataset.tab === 'dip' ? 'others' : 'dip';
+                activateTab(next, true);
+            });
+        });
+
+        els.menuToggle.addEventListener('click', () => {
+            const isOpen = els.menuToggle.getAttribute('aria-expanded') === 'true';
+            els.menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            els.menuToggle.setAttribute('aria-label', isOpen ? 'Отвори менюто' : 'Затвори менюто');
+            els.mobileMenu.classList.toggle('is-open', !isOpen);
+        });
+
+        els.mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+            els.menuToggle.setAttribute('aria-expanded', 'false');
+            els.menuToggle.setAttribute('aria-label', 'Отвори менюто');
+            els.mobileMenu.classList.remove('is-open');
+        }));
+
+        document.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', closeModal));
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeModal();
+                if (els.menuToggle.getAttribute('aria-expanded') === 'true') {
+                    els.menuToggle.click();
+                }
+            }
+        });
+
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        const sections = [...document.querySelectorAll('main [id]')].filter(section => section.id !== 'main');
+        const desktopLinks = [...document.querySelectorAll('.desktop-nav a')];
+        const navObserver = new IntersectionObserver(entries => {
+            const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (!visible) return;
+            desktopLinks.forEach(link => link.setAttribute('aria-current', String(link.getAttribute('href') === `#${visible.target.id}`)));
+        }, { rootMargin: '-35% 0px -55%', threshold: [0, .1, .3] });
+        sections.forEach(section => navObserver.observe(section));
+
+        renderList(dipData, 'dip-container');
+        renderList(othersData, 'others-container');
+        updateStats();
+        activateTab('dip');
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
